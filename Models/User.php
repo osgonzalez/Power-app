@@ -64,6 +64,12 @@ class User
         $this->Birthdate = $Birthdate;
     }
 
+
+    public function hashPassword(){
+        $this->PasswordHash = md5($this->PasswordHash);
+    }
+
+
     /**
      * @return mixed
      */
