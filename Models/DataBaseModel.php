@@ -12,6 +12,7 @@ class UserDAO
     private $userName = "admin";
     private $passWord = "admin";
     private $DBName = "powerAppDB";
+    private $lastResult;
 	
 	function __construct(){
 
@@ -31,7 +32,7 @@ class UserDAO
 
         $DNI = $user->getDNI();
         $statement->bind_param("s",$DNI);
-        
+
         if(!$statement->execute()) {
             return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
         }
@@ -68,10 +69,34 @@ class UserDAO
     }
 
 
+    function getLastResult(){
+        return $this->lastResult;
+    }
+
+    function getAll(){
+        $statement = $this->DBLink->prepare("SELECT * FROM UsersGym");
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+        }else{
+            $result = $statement->get_result();
+            $toRet = array();
+
+            while ($row = $result->fetch_assoc()){
+                $user = new User($row['DNI']);
+                $user->loadDataAssoc($row);
+                array_push($toRet,$user);
+            }
+            $this->lastResult = $toRet;
+            return "ok";
+        }
+    }
+
+
     function get(User $user){
 
 
-        $statement = $this->DBLink->prepare("SELECT * FROM `UsersGym` WHERE 'DNI'=?");
+        $statement = $this->DBLink->prepare("SELECT * FROM UsersGym WHERE DNI=?");
         $DNI = $user->getDNI();
         $UserType = $user->getUserType();
         $PasswordHash = $user->getPasswordHash();

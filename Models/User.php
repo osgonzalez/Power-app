@@ -40,15 +40,15 @@ class User
      */
     public function loadDataAssoc($dataArray)
     {
-        $result = $dataArray->fetch_assoc();
-        $this->UserType = $result['UserType'];
-        $this->PasswordHash = $result['PasswordHash'];
-        $this->FirstName = $result['FirstName'];
-        $this->LastName = $result['LastName'];
-        $this->Email = $result['Email'];
-        $this->Telephone = $result['Telephone'];
-        $this->City = $result['City'];
-        $this->Birthdate = $result['Birthdate'];
+       // $result = $dataArray->fetch_assoc();
+        $this->UserType = $dataArray['UserType'];
+        $this->PasswordHash = $dataArray['PasswordHash'];
+        $this->FirstName = $dataArray['FirstName'];
+        $this->LastName = $dataArray['LastName'];
+        $this->Email = $dataArray['Email'];
+        $this->Telephone = $dataArray['Telephone'];
+        $this->City = $dataArray['City'];
+        $this->Birthdate = $dataArray['Birthdate'];
     }
 
     public function loadData($UserType, $PasswordHash, $FirstName, $LastName, $Email, $Telephone, $City, $Birthdate)
