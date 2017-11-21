@@ -1,14 +1,14 @@
 <?php
 
 
-
+/*
 
 
 include './Models/User.php';
-include './Models/DataBaseModel.php';
+include './Models/UsersModel.php';
 
 
-/*
+
 $user = new User("15491094L");
 $user->loadData("ADMIN","admin","otro","otro","otro","333333333",
                                 "Vigo","19/11/91");
@@ -21,6 +21,7 @@ $message = $DAO->add($user);
 
 
 echo $message;*/
+/*
 
 $DAO = new UserDAO();
 
@@ -46,9 +47,9 @@ if(strcasecmp($message,"ok") != 0){
         echo "<br>";
     }
 
+}*/
 
-
-}
+header('Location: ./Controllers/loginController.php');
 
 
 

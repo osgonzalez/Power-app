@@ -18,8 +18,6 @@ class UserDAO
 
 	    $this->DBLink =  new mysqli($this->serverName,$this->userName,$this->passWord,$this->DBName);
 
-
-
     }
 
 
@@ -98,26 +96,54 @@ class UserDAO
 
         $statement = $this->DBLink->prepare("SELECT * FROM UsersGym WHERE DNI=?");
         $DNI = $user->getDNI();
-        $UserType = $user->getUserType();
-        $PasswordHash = $user->getPasswordHash();
-        $FirstName = $user->getFirstName();
-        $LastName = $user->getLastName();
-        $Email = $user->getEmail();
-        $Telephone = $user->getTelephone();
-        $City = $user->getCity();
-        $Birthdate = $user->getBirthdate();
 
-        $statement->bind_param("ssssssiss",$DNI,$UserType, $PasswordHash, $FirstName, $LastName, $Email, $Telephone, $City, $Birthdate);
 
-        $statement->execute();
+        $statement->bind_param("s",$DNI);
 
-        $statement->fetch();
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
 
-        if ($statement> 0){
+        }else{
+            $result = $statement->get_result();
+            $row = $result->fetch_assoc();
+            $user = new User($row['DNI']);
+            $user->loadDataAssoc($row);
 
+            $this->lastResult = $user;
+            return "ok";
         }
 
+    }
 
+
+
+    function login(User $user){
+
+        $statement = $this->DBLink->prepare("SELECT * FROM UsersGym WHERE DNI=?");
+        $DNI = $user->getDNI();
+        $PasswordHash = $user->getPasswordHash();
+
+
+        $statement->bind_param("ss",$DNI,$PasswordHash);
+
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+        }else{
+
+            $result = $statement->get_result();
+
+            if($result->num_rows == 0){
+                return "El DNI: ". $DNI . " no existe en la base de datos.";
+            }else{
+                $row = $result->fetch_assoc();
+                if(strcasecmp($row['PasswordHash'],$user->getPasswordHash()) == 0){
+                    return 'ok';
+                }else{
+                    return 'password no valida';
+                }
+            }
+        }
 
     }
 
@@ -127,4 +153,21 @@ class UserDAO
 
 
 
- ?>
+
+
+
+/*
+$UserType = $user->getUserType();
+$PasswordHash = $user->getPasswordHash();
+$FirstName = $user->getFirstName();
+$LastName = $user->getLastName();
+$Email = $user->getEmail();
+$Telephone = $user->getTelephone();
+$City = $user->getCity();
+$Birthdate = $user->getBirthdate();
+
+
+*/
+
+
+?>

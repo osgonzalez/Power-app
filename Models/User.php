@@ -69,6 +69,14 @@ class User
         $this->PasswordHash = md5($this->PasswordHash);
     }
 
+    /**
+     * @param mixed $PasswordHash
+     */
+    public function setPasswordHash($PasswordHash){
+        $this->PasswordHash = $PasswordHash;
+    }
+
+
 
     /**
      * @return mixed

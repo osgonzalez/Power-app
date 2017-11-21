@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bell Bootstrap 4 Theme</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="./lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="./css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Bell
+    Theme URL: https://bootstrapmade.com/bell-free-bootstrap-4-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  <!-- Page Content
+    ================================================== -->
+  <!-- Hero -->
+
+  <section class="hero" id="hero">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <a class="hero-brand" href="login.html" title="Home"><img alt="Bell Logo" src="img/logo.png"></a>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <h1>
+            Bienvenido
+          </h1>
+
+        <p class="tagline">
+          <form id="Login" action="../Controllers/loginController.php">
+            <label>
+              DNI<br>
+              <input id="user" name="DNI" type="text">
+            </label>
+              <br>
+              <br>
+            <label>
+                PASSWORD<br>
+                <input id="pass" name="PasswordHash" type="password">
+              </label>
+            <br>
+            <br>
+            <button class="btn btn-full" type="submit">Login</button>
+          </form>
+        </p>
+      </div>
+    </div>
+
+  </section>
+  <!-- /Hero -->
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <a href="login.html"><img src="img/logo.png" alt="" title="" /></a>
+        <!-- Uncomment below if you prefer to use a text image -->
+        <!--<h1><a href="#hero">Bell</a></h1>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#location">Localización</a></li>
+          <li><a href="#instalations">Instalaciones</a></li>
+          <li class="menu-has-children"><a href="">Cursos</a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="menu-has-children"><a href="#">Drop Down 2</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 5</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contacta con nosotros</a></li>
+        </ul>
+      </nav>
+      <!-- #nav-menu-container -->
+
+
+    </div>
+  </header>
+  <!-- #header -->
+
+  <!-- location -->
+
+  <section class="location" id="location">
+    <div class="container text-center">
+      <h2 style="color:#F5424A">
+          Localización
+        </h2>
+
+      <p>
+        El gimnasio del servicio de deportes del campus de Ourense, perteneciente a la Universidad de Vigo se sitúa en las mediaciones del campus Sur, en las proximidades del barrio de A Lonia, a 1 minuto de la FCET y a 5 de la ESEI andando.
+        Cuenta con amplio aparcamiento en sus alrededores, servicios de restauración y un amplio número de taquillas a disposición de todos los usuarios.
+      </p>
+
+      <div class="row stats-row">
+        <img src="img/location.png">
+      </div>
+    </div>
+  </section>
+  <!-- /location -->
+  <!-- Parallax -->
+
+  <div class="block bg-primary block-pd-lg block-bg-overlay text-center" data-bg-img="img/banner.png" data-settings='{"stellar-background-ratio": 0.6}' data-toggle="parallax-bg">
+    <h2>
+        Bienvenido al Servicio de Deportes del Campus de Ourense
+      </h2>
+
+    <p>
+      El gimnasio más ameno y variado enfocado a todas las edades y todo tipo de actividades
+    </p>
+    <img alt="Bell - A perfect theme" class="gadgets-img hidden-md-down" src="img/pesasRusas.jpg">
+  </div>
+  <!-- /Parallax -->
+
+
+  <!-- instalations -->
+
+  <section class="instalations" id="instalations">
+    <div class="container">
+      <h2 class="text-center">
+          Conoce nuestras instalaciones
+        </h2>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-6">
+          <div class="card card-block">
+            <a href="#"><img alt="" class="instalations-img" src="img/cancha.jpg">
+              <div class="card-title-wrap">
+                <span class="card-title">Cancha central</span>
+              </div>
+
+              <div class="instalations-over">
+                <p class="hidden-md-down">
+                  Esta cancha central es capaz de albergar partidos de baloncesto, futbol sala, voleibol, entre otros eventos.
+                  Consta con una grada para una capacidad para 100 personas con máquinas expendedoras.
+                </p>
+          </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-xs-6">
+        <div class="card card-block">
+          <a href="#"><img alt="" class="instalations-img" src="img/gimnasio2.jpg">
+              <div class="card-title-wrap">
+                <span class="card-title">Sala del gimnasio</span>
+              </div>
+
+              <div class="instalations-over">
+                <p class="hidden-md-down">
+                  La sala del gimnasio alberga actividades de Bailes, Suelo pélvico, Circuit Fit, entre otros...
+                  También se pueden observar las diferentes máquinas de cardio en la parte superior.
+                </p>
+              </div>
+          </a>
+        </div>
+      </div>
+
+    <div class="col-sm-3 col-xs-6">
+      <div class="card card-block">
+        <a href="#"><img alt="" class="instalations-img" src="img/bicis.jpg">
+              <div class="card-title-wrap">
+                <span class="card-title">Sala de Ciclo Indoor</span>
+              </div>
+
+              <div class="instalations-over">
+                <p class="hidden-md-down">
+                  La sala de Ciclo Indoor cuenta con 36 bicicletas magnéticas destinadas a la actividad de Ciclo Indoor o más conocida como Spinning.
+                </p>
+              </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-sm-3 col-xs-6">
+      <div class="card card-block">
+        <a href="#"><img alt="" class="instalations-img" src="img/squash.jpg">
+              <div class="card-title-wrap">
+                <span class="card-title">Sala de Squash</span>
+              </div>
+
+              <div class="instalations-over">
+                <p class="hidden-md-down">
+                  La sala de Squash está disponible para todos aquellos usuarios que la deseen alquilar para uso y disfrute de la misma. No te preocupes si no tienes raquetas, nosotros podemos prestarte alguna.
+                </p>
+            </div>
+        </a>
+      </div>
+    </div>
+
+        <div class="col-sm-3 col-xs-6">
+          <div class="card card-block">
+            <a href="#"><img alt="" class="instalations-img" src="img/pinpon.jpg">
+              <div class="card-title-wrap">
+                <span class="card-title">Mesa de Ping-Pong</span>
+              </div>
+
+              <div class="instalations-over">
+                <p class="hidden-md-down">
+                  La mesa de tenis de mesa está ubicada en la planta principal, a un lado en la sala de Ciclo Indoor. Disponible para todos los usuarios con raqueta propia o prestada por el servicio de deportes.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+          <div class="card card-block">
+            <a href="#"><img alt="" class="instalations-img" src="img/gimnasiomaquinas.jpg">
+              <div class="card-title-wrap">
+                <span class="card-title">Sala de musculación</span>
+              </div>
+
+              <div class="instalations-over">
+                <p class="hidden-md-down">
+                  Esta sala cuenta con 40 máquinas para trabajar los distintos grupos musculares. Déjate aconsejar por el monitor de sala para conseguir tus metas.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+          <div class="card card-block">
+            <a href="#"><img alt="" class="instalations-img" src="img/pista.jpg">
+              <div class="card-title-wrap">
+                <span class="card-title">Pista de atletismo</span>
+              </div>
+
+              <div class="instalations-over">
+                <p class="hidden-md-down">
+                  Esta pista es capaz de albergar pruebas de atletismo de caracter nacional, partidos de Rugby, fútbol gaélico y fútbol 11.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+          <div class="card card-block">
+            <a href="#"><img alt="" class="instalations-img" src="img/tenis.jpg">
+              <div class="card-title-wrap">
+                <span class="card-title">Pistas de Tenis</span>
+              </div>
+
+              <div class="instalations-over">
+                <p class="hidden-md-down">
+                  Las pistas están disponibles para las escuelas del Servicio de Deportes y para todos los usuarios y gente externa que estén interesados en su uso previo pago de un alquiler de las instalaciones.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+    </div>
+    </div>
+  </section>
+  <!-- /instalations -->
+
+  <!-- precios -->
+
+  <section class="precios" id="precios">
+    <div class="container text-center">
+      <h2>
+        ABONOS
+      </h2>
+
+      <p>
+        Existen distintas modalidades de abono para los futuros usuarios del servicio de deportes:
+        <ul>
+          <li><b><i>Abono Muver</i></b>
+            <ul>
+              <li>
+                Este abono está dirigido fundamentalmente a personas con buena salud, con conocimientos básicos sobre ejercicio físico y autonomía para organizar su propio programa de ejercicios.
+              </li>
+              <li>
+                <b>Incluye:</b>
+                Acceso gratuíto a las instalaciones deportivas de la Universidad en los 3 campus durante todo su horario de apertura.
+                Acceso gratuito a las actividades dirigidas de fitness (baile, ciclo-indoor, circuit fit, ioga, total body, zumba, ...).
+                20 % de descuento en las Escuelas Deportivas y en los servicios de salud.
+                Precios especiales en las actividades del programa Augaventura.
+              </li>
+            </ul>
+          </li>
+          <br>
+          <li>
+            <b><i>Abono Ponte en Forma</i></b>
+            <ul>
+              <li>
+                Este abono está dirigido a personas sin experiencia en el mundo fitness o actividad física en general que
+                quieran iniciarse en el ejercicio físico saludable de manera segura y adecuada, personas con algún tipo de
+                patología o enfermedad que necesitan de un asesoramiento técnico especializado para realizar a práctica deportiva,
+                personas que necesitan un seguimiento personalizado para conseguir mejorar sus resultados.
+              </li>
+              <li>
+                <b>Incluye:</b>
+                Todas las ventajas incluídas en el Abono Muver, dos revisiones médico-deportivas gratuítas:<p><i>Inicial:</i> para conocer el punto de partida del usuario (historia clínica, exploración física y ortopédica, podoscopia, medición de tensión arterial, electrocardiograma, espirometría y control antropométrico).<br>
+      <i>Final o de Seguimiento (cada 4 meses se evalua la efectividad del programa a través de la evolución de los parámetros asociados a una condición física saludable:</i> antropometría, forza-resistencia muscular, flexibilidade, equilibrio e resistencia cardiorrespiratoria).
+    </p>Diseño de programas de ejercicio físico en función de los objectivos y del estado de forma de cada usuario/a con seguimento personalizado a lo largo de todo su desarrollo, posibilidad de obtener 2 créditos de libre elección o 1 crédito ECTS en el caso de cumplir con los criterios establecidos de asistencia (30 sesiones de entrenamiento en la sala cardiofitness + 2 revisiones médicas) y de aprendizaje.
+      </li>
+      </ul>
+      </li>
+      </ul>
+      </p>
+    </div>
+
+    <div class="precios-grid">
+      <div class="row">
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="img/muverAnualPDI.png">
+              <div class="precios-over">
+                <div>
+                  <h3 class="card-title">
+                    Precio: 60 €
+                  </h3>
+
+                  <p class="card-text">
+                    Desde el 01/09/2017 al 31/08/2018
+                  </p>
+                </div>
+              </div></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="img/muverAnualNoTitulados.png">
+              <div class="precios-over">
+                <div>
+                  <h3 class="card-title">
+                    Precio: 180 €
+                  </h3>
+
+                  <p class="card-text">
+                    Desde el 01/09/2017 al 31/08/2018
+                  </p>
+                </div>
+              </div></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="img/muverCuatriPDI.png">
+              <div class="precios-over">
+                <div>
+                  <h3 class="card-title">
+                    Precio: 35 €
+                  </h3>
+
+                  <p class="card-text">
+                    Desde 01/09/2017 al 15/01/2018 <br> ó <br> desde 16/01/2018 al 31/05/2018
+                  </p>
+                </div>
+              </div></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="img/muverCuatriNoTitulados.png">
+              <div class="precios-over">
+                <div>
+                  <h3 class="card-title">
+                    Precio: 100 €
+                  </h3>
+
+                  <p class="card-text">
+                    Desde 01/09/2017 al 15/01/2018 <br> ó <br> desde 16/01/2018 al 31/05/2018
+                  </p>
+                </div>
+              </div></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="img/PEFAnuaalPDI.png">
+              <div class="precios-over">
+                <div>
+                  <h3 class="card-title">
+                    Precio: 110 €
+                  </h3>
+
+                  <p class="card-text">
+                    Desde 01/09/2017 al 31/08/2018
+                  </p>
+                </div>
+              </div></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="img/PEFCuatriPDI.png">
+              <div class="precios-over">
+                <div>
+                  <h3 class="card-title">
+                    Precio: 60 €
+                  </h3>
+
+                  <p class="card-text">
+                    Desde 01/09/2017 al 15/01/2018 <br> ó <br> 16/01/2018 - 31/05/2018
+                  </p>
+                </div>
+              </div></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- /precios -->
+
+  <!-- @component: footer -->
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="section-title">Contáctanos</h2>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-4">
+          <div class="info">
+            <div>
+              <i class="fa fa-map-marker"></i>
+              <p>Pabellón Universitario<br>Campus A Lonia (Ourense)</p>
+            </div>
+
+            <div>
+              <i class="fa fa-envelope"></i>
+              <p>depor-ou@uvigo.es</p>
+            </div>
+
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>00 34 988 38 71 98</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-8">
+          <div class="form">
+            <div id="sendmessage">Tu mensaje ha sido enviado. Muchas gracias!</div>
+            <div id="errormessage"></div>
+            <form action="" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre" data-rule="minlen:4" data-msg="Por favor, introduce al menos 4 caracteres" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Tu email" data-rule="email" data-msg="Por favor, introduce un email válido" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Por favor, introduce un asunto con al menos 8 caracteres" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Por favor, déjanos un mensaje..." placeholder="Mensaje"></textarea>
+                <div class="validation"></div>
+              </div>
+              <div class="text-center"><button type="submit">Envía el mensaje</button></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="bottom">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-6 col-xs-12 text-lg-left text-center">
+            <p class="copyright-text">
+              © BELL Theme
+            </p>
+            <div class="credits">
+              <!--
+                All the links in the footer should remain intact.
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bell
+              -->
+              <a href="https://bootstrapmade.com/">Bootstrap Templates</a> by BootstrapMade
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
+
+
+  <!-- Required JavaScript Libraries -->
+  <script src="./lib/jquery/jquery.min.js"></script>
+  <script src="./lib/jquery/jquery-migrate.min.js"></script>
+  <script src="./lib/superfish/hoverIntent.js"></script>
+  <script src="./lib/superfish/superfish.min.js"></script>
+  <script src="./lib/tether/js/tether.min.js"></script>
+  <script src="./lib/stellar/stellar.min.js"></script>
+  <script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./lib/counterup/counterup.min.js"></script>
+  <script src="./lib/waypoints/waypoints.min.js"></script>
+  <script src="./lib/easing/easing.js"></script>
+  <script src="./lib/stickyjs/sticky.js"></script>
+  <script src="./lib/parallax/parallax.js"></script>
+  <script src="./lib/lockfixed/lockfixed.min.js"></script>
+
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="./js/custom.js"></script>
+
+  <script src="./contactform/contactform.js"></script>
+
+</body>
+</html>
