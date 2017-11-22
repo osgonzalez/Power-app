@@ -31,20 +31,16 @@ else{
             session_start();
             $usuarioDAO->get($user);
             $_SESSION['login'] = $_REQUEST['DNI'];
-            $_SESSION['Type'] = $usuarioDAO->getLastResult()->getUserType();
+            $_SESSION['type'] = "ADMIN";//$usuarioDAO->getLastResult()->getUserType();
             header('Location:../index.php');
         } else {
             unset($_REQUEST['DNI']);
             unset($_REQUEST['PasswordHash']);
             include '../Views/MESSAGE_View.php';
-            new MESSAGE($respuesta, './Login_Controller.php');
+            new MESSAGE($respuesta, './loginController.php');
         }
 
     }
-
-
-    include '../Views/loginView.php';
-    new login();
 }
 
 

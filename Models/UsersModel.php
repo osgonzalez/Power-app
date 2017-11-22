@@ -121,10 +121,10 @@ class UserDAO
 
         $statement = $this->DBLink->prepare("SELECT * FROM UsersGym WHERE DNI=?");
         $DNI = $user->getDNI();
-        $PasswordHash = $user->getPasswordHash();
 
 
-        $statement->bind_param("ss",$DNI,$PasswordHash);
+
+        $statement->bind_param("s",$DNI);
 
         if(!$statement->execute()) {
             return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
