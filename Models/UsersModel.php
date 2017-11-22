@@ -147,6 +147,63 @@ class UserDAO
 
     }
 
+
+
+    function delete(User $user){
+        $statement = $this->DBLink->prepare("DELETE FROM UsersGym WHERE DNI=?");
+
+        $DNI = $user->getDNI();
+        $statement->bind_param("s",$DNI);
+
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+        }else{
+            return 'Borrado realizado con exito';
+        }
+    }
+
+    function edit(User $user){
+
+        $statement = $this->DBLink->prepare("SELECT * FROM UsersGym WHERE DNI=?");
+        $DNI = $user->getDNI();
+
+
+        $statement->bind_param("s",$DNI);
+
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+        }else{
+            $resultado = $statement->get_result();
+            if($resultado->num_rows == 0){
+                return 'El usuario no existe.';
+            }else{
+                $statement = $this->DBLink->prepare("UPDATE UsersGym SET UserType= ?, PasswordHash= ?, FirstName= ?, 
+                                                                    LastName= ?, Email= ?, Telephone= ?, City= ?, Birthdate= ? WHERE DNI=?");
+                $DNI = $user->getDNI();
+                $UserType = $user->getUserType();
+                $PasswordHash = $user->getPasswordHash();
+                $FirstName = $user->getFirstName();
+                $LastName = $user->getLastName();
+                $Email = $user->getEmail();
+                $Telephone = $user->getTelephone();
+                $City = $user->getCity();
+                $Birthdate = $user->getBirthdate();
+
+                $statement->bind_param("ssssssiss",$DNI,$UserType, $PasswordHash, $FirstName, $LastName, $Email, $Telephone, $City, $Birthdate);
+
+                if(!$statement->execute()) {
+                    return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+                }else{
+                    return 'Se ha actualizado con exito.';
+                }
+
+            }
+
+        }
+    }
+
 }
 
 

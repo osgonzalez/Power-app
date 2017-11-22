@@ -8,9 +8,8 @@ include '../Functions/Authentication.php';
 if (IsAuthenticated()){
     include '../Views/welcomeUserView.php';
     new welcome();
-}
-//esta autenticado
-else{
+
+}else{
     if(!isset($_REQUEST['DNI']) && !(isset($_REQUEST['PasswordHash']))){
         include '../Views/loginView.php';
         new login();
