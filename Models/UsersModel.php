@@ -59,7 +59,7 @@ class UserDAO
                 return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
 
             }else{
-                return "Insercio correcta";
+                return "Insercion correcta";
             }
 
         }
@@ -191,7 +191,7 @@ class UserDAO
                 $City = $user->getCity();
                 $Birthdate = $user->getBirthdate();
 
-                $statement->bind_param("ssssssiss",$DNI,$UserType, $PasswordHash, $FirstName, $LastName, $Email, $Telephone, $City, $Birthdate);
+                $statement->bind_param("sssssisss",$UserType, $PasswordHash, $FirstName, $LastName, $Email, $Telephone, $City, $Birthdate,$DNI);
 
                 if(!$statement->execute()) {
                     return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
@@ -205,26 +205,5 @@ class UserDAO
     }
 
 }
-
-
-
-
-
-
-
-
-/*
-$UserType = $user->getUserType();
-$PasswordHash = $user->getPasswordHash();
-$FirstName = $user->getFirstName();
-$LastName = $user->getLastName();
-$Email = $user->getEmail();
-$Telephone = $user->getTelephone();
-$City = $user->getCity();
-$Birthdate = $user->getBirthdate();
-
-
-*/
-
 
 ?>
