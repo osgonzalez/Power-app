@@ -23,9 +23,8 @@ class Exercise{
     }
 
 
-    public function loadData($IDExercise, $Name, $ExerciseType, $Content)
+    public function loadData($Name, $ExerciseType, $Content)
     {
-        $this->IDExercise = $IDExercise;
         $this->Name = $Name;
         $this->ExerciseType = $ExerciseType;
         $this->Content = $Content;

@@ -17,7 +17,7 @@ class welcome{
                 break;
             case 'COACH':
                 include '../Templates/lateralBar.html';
-                include '../Templates/adminWelcomePage.php';
+                include '../Templates/coachWelcomePage.php';
                 break;
             case 'PEF':
                 include '../Templates/lateralBar.html';

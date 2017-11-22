@@ -30,6 +30,12 @@ if (!IsAuthenticated() && $_SESSION['type'] == 'ADMIN'){
             include '../Templates/userAddForm.html';
             break;
 
+        case 'exerciseEdit':
+            break;
+
+        case 'exerciseAdd':
+            break;
+
 
 
     }

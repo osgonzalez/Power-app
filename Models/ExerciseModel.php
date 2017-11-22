@@ -1,6 +1,6 @@
 <?php
 
-class UserDAO
+class ExerciseDAO
 {
 
     private $DBLink;
@@ -16,16 +16,15 @@ class UserDAO
 
     }
 
-
     /**
      * @param User $user
      */
-    function add(User $user){
+    function add(Exercise $exercise){
 
-        $statement = $this->DBLink->prepare("SELECT * FROM UsersGym WHERE DNI = ?");
+        $statement = $this->DBLink->prepare("SELECT * FROM Exercise WHERE IDExercise = ?");
 
-        $DNI = $user->getDNI();
-        $statement->bind_param("s",$DNI);
+        $IDExercise = $exercise->getIDExercise();
+        $statement->bind_param("i",$IDExercise);
 
         if(!$statement->execute()) {
             return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
@@ -33,23 +32,17 @@ class UserDAO
         $resultado = $statement->get_result();
 
         if($resultado->num_rows != 0){
-            return "El DNI: ". $DNI . " ya existe en la base de datos.";
+            return "El Ejercicio: ". $IDExercise . " ya existe en la base de datos.";
         }else{
 
-            $statement = $this->DBLink->prepare("INSERT INTO UsersGym(DNI, UserType, PasswordHash, FirstName, 
-                                                                    LastName, Email, Telephone, City, Birthdate) 
-                                                                    VALUES (?,?,?,?,?,?,?,?,?)");
-            $DNI = $user->getDNI();
-            $UserType = $user->getUserType();
-            $PasswordHash = $user->getPasswordHash();
-            $FirstName = $user->getFirstName();
-            $LastName = $user->getLastName();
-            $Email = $user->getEmail();
-            $Telephone = $user->getTelephone();
-            $City = $user->getCity();
-            $Birthdate = $user->getBirthdate();
+            $statement = $this->DBLink->prepare("INSERT INTO Exercise(Name, ExerciseType, Content) 
+                                                                    VALUES (?,?,?)");
+            $Name = $exercise->getName();
+            $ExerciseType = $exercise->getExerciseType();
+            $Content = $exercise->getContent();
 
-            $statement->bind_param("ssssssiss",$DNI,$UserType, $PasswordHash, $FirstName, $LastName, $Email, $Telephone, $City, $Birthdate);
+
+            $statement->bind_param("sss",$Name,$ExerciseType, $Content);
 
             if(!$statement->execute()) {
                 return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
@@ -68,7 +61,7 @@ class UserDAO
     }
 
     function getAll(){
-        $statement = $this->DBLink->prepare("SELECT * FROM UsersGym");
+        $statement = $this->DBLink->prepare("SELECT * FROM Exercise");
         if(!$statement->execute()) {
             return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
 
@@ -77,9 +70,9 @@ class UserDAO
             $toRet = array();
 
             while ($row = $result->fetch_assoc()){
-                $user = new User($row['DNI']);
-                $user->loadDataAssoc($row);
-                array_push($toRet,$user);
+                $Exercise = new Exercise($row['IDExercise']);
+                $Exercise->loadDataAssoc($row);
+                array_push($toRet,$Exercise);
             }
             $this->lastResult = $toRet;
             return "ok";
@@ -87,14 +80,14 @@ class UserDAO
     }
 
 
-    function get(User $user){
+    function get(Exercise $exercise){
 
 
-        $statement = $this->DBLink->prepare("SELECT * FROM UsersGym WHERE DNI=?");
-        $DNI = $user->getDNI();
+        $statement = $this->DBLink->prepare("SELECT * FROM Exercise WHERE IDExercise=?");
+        $IDExercise = $exercise->getIDExercise();
 
 
-        $statement->bind_param("s",$DNI);
+        $statement->bind_param("s",$IDExercise);
 
         if(!$statement->execute()) {
             return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
@@ -102,10 +95,10 @@ class UserDAO
         }else{
             $result = $statement->get_result();
             $row = $result->fetch_assoc();
-            $user = new User($row['DNI']);
-            $user->loadDataAssoc($row);
+            $exercise = new Exercise($row['IDExercise']);
+            $exercise->loadDataAssoc($row);
 
-            $this->lastResult = $user;
+            $this->lastResult = $exercise;
             return "ok";
         }
 
@@ -113,43 +106,12 @@ class UserDAO
 
 
 
-    function login(User $user){
 
-        $statement = $this->DBLink->prepare("SELECT * FROM UsersGym WHERE DNI=?");
-        $DNI = $user->getDNI();
+    function delete(Exercise $exercise){
+        $statement = $this->DBLink->prepare("DELETE FROM Exercise WHERE IDExercise=?");
 
-
-
-        $statement->bind_param("s",$DNI);
-
-        if(!$statement->execute()) {
-            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
-
-        }else{
-
-            $result = $statement->get_result();
-
-            if($result->num_rows == 0){
-                return "El DNI: ". $DNI . " no existe en la base de datos.";
-            }else{
-                $row = $result->fetch_assoc();
-                if(strcasecmp($row['PasswordHash'],$user->getPasswordHash()) == 0){
-                    return 'ok';
-                }else{
-                    return 'password no valida';
-                }
-            }
-        }
-
-    }
-
-
-
-    function delete(User $user){
-        $statement = $this->DBLink->prepare("DELETE FROM UsersGym WHERE DNI=?");
-
-        $DNI = $user->getDNI();
-        $statement->bind_param("s",$DNI);
+        $IDExercise = $exercise->getIDExercise();
+        $statement->bind_param("s",$IDExercise);
 
         if(!$statement->execute()) {
             return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
@@ -159,13 +121,13 @@ class UserDAO
         }
     }
 
-    function edit(User $user){
+    function edit(Exercise $exercise){
 
-        $statement = $this->DBLink->prepare("SELECT * FROM UsersGym WHERE DNI=?");
-        $DNI = $user->getDNI();
+        $statement = $this->DBLink->prepare("SELECT * FROM Exercise WHERE IDExercise=?");
+        $IDExercise = $exercise->getIDExercise();
 
 
-        $statement->bind_param("s",$DNI);
+        $statement->bind_param("s",$IDExercise);
 
         if(!$statement->execute()) {
             return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
@@ -173,21 +135,15 @@ class UserDAO
         }else{
             $resultado = $statement->get_result();
             if($resultado->num_rows == 0){
-                return 'El usuario no existe.';
+                return 'El ejercicio no existe.';
             }else{
-                $statement = $this->DBLink->prepare("UPDATE UsersGym SET UserType= ?, PasswordHash= ?, FirstName= ?, 
-                                                                    LastName= ?, Email= ?, Telephone= ?, City= ?, Birthdate= ? WHERE DNI=?");
-                $DNI = $user->getDNI();
-                $UserType = $user->getUserType();
-                $PasswordHash = $user->getPasswordHash();
-                $FirstName = $user->getFirstName();
-                $LastName = $user->getLastName();
-                $Email = $user->getEmail();
-                $Telephone = $user->getTelephone();
-                $City = $user->getCity();
-                $Birthdate = $user->getBirthdate();
+                $statement = $this->DBLink->prepare("UPDATE Exercise SET Name= ?, ExerciseType= ?, Content= ?");
+                $IDExercise = $exercise->getIDExercise();
+                $Name = $exercise->getName();
+                $ExerciseType = $exercise->getExerciseType();
+                $Content = $exercise->getContent();
 
-                $statement->bind_param("sssssisss",$UserType, $PasswordHash, $FirstName, $LastName, $Email, $Telephone, $City, $Birthdate,$DNI);
+                $statement->bind_param("isss",$IDExercise, $Name, $ExerciseType, $Content);
 
                 if(!$statement->execute()) {
                     return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
