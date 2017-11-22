@@ -30,7 +30,7 @@ if (IsAuthenticated()){
             session_start();
             $usuarioDAO->get($user);
             $_SESSION['login'] = $_REQUEST['DNI'];
-            $_SESSION['type'] = "ADMIN";//$usuarioDAO->getLastResult()->getUserType();
+            $_SESSION['type'] = $usuarioDAO->getLastResult()->getUserType();
             header('Location:../index.php');
         } else {
             unset($_REQUEST['DNI']);

@@ -13,6 +13,7 @@ class CoursesShowAllView{
     function render(){
 
         include '../Templates/header.html';
+        include '../Templates/lateralBar.html';
 
         foreach ($this->courses as $course){
             echo "IDCurso: ".$course->getIDCourses();
@@ -28,12 +29,14 @@ class CoursesShowAllView{
             echo "Entrenador Responsable: ". $course->getDNICoach();
             echo "<br>";
 
+            echo '<a href="../Controllers/formLoader.php?DNI='.$course->getIDCourses().'&form=EDIT">Edit.</a>';
             echo '<a href="../Controllers/CoursesActionController.php?DNI='.$course->getIDCourses().'&action=DELETE">Borrar.</a>';
-
 
             echo "<br>";
             echo "<br>";
         }
+        echo '<a href="../Controllers/formLoader.php?form=ADD">Add.</a>';
+        echo '<a href="../index.php">Volver.</a>';
 
 
 
