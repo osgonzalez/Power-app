@@ -10,6 +10,7 @@ if (!IsAuthenticated() && $_SESSION['type'] == 'ADMIN'){
 }else{
 
     include '../Models/UsersModel.php';
+    include '../Models/User.php';
     $DAO = new UserDAO();
 
     $message = $DAO->getAll();
@@ -21,8 +22,8 @@ if (!IsAuthenticated() && $_SESSION['type'] == 'ADMIN'){
 
     }else{
 
-        include '../Views/CourseView.php';
-        new CourseView($DAO->getLastResult());
+        include '../Views/UsersShowAllView.php';
+        new UsersShowAllView($DAO->getLastResult());
     }
 
 }

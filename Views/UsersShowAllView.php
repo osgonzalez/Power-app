@@ -1,7 +1,7 @@
 <?php
 
 
-class CourseView{
+class UsersShowAllView{
 
     var $users;
 
@@ -25,6 +25,10 @@ class CourseView{
             echo "<br>";
             echo "Ciudad: ". $user->getCity();
             echo "<br>";
+
+            echo '<a href="../Controllers/UserActionController.php?DNI='.$user->getDNI().'&action=DELETE">Borrar.</a>';
+
+
             echo "<br>";
             echo "<br>";
         }
