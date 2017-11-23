@@ -1674,7 +1674,7 @@ PANELS CONFIGURATIONS
   display: block;
   position: relative;
   overflow: hidden;
-  background-color: #F5424A;
+  /*background-color: #F5424A;*/
   -webkit-transition: background-color 0.4s;
   -moz-transition: background-color 0.4s;
   -o-transition: background-color 0.4s;
@@ -1694,7 +1694,7 @@ PANELS CONFIGURATIONS
 }
 
 .project:hover .photo-wrapper {
-  background-color: #F5424A;
+  /*background-color: #F5424A;*/
 	background-image:url(../img/zoom.png);
 	background-repeat:no-repeat;
 	background-position:center;
