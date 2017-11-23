@@ -12,7 +12,7 @@ class courseEditView{
             <div class="col-lg-12">
                 <div class="form-panel">
                     <h4 class="mb"><i class="fa fa-angle-right"></i> Editar Curso</h4>
-                    <form class="form-horizontal style-form" action="../Controllers/CoursesActionController.php?action=EDIT">
+                    <form method="post" class="form-horizontal style-form" action="../Controllers/CoursesActionController.php?action=EDIT">
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">ID Curso</label>
                             <div class="col-sm-10">
@@ -62,7 +62,7 @@ class courseEditView{
                         </div>
 
                         <button class="submit" type="submit"><img src="../Templates/img2/add.png"></button>
-                        <a class="submit" href="../Controllers/CoursesShowAllController.php?action=EDIT"><img src="../Templates/img2/atras.png"></a>
+                        <a class="submit" href="../Controllers/CoursesShowAllController.php"><img src="../Templates/img2/atras.png"></a>
                     </form>
                 </div>
             </div>

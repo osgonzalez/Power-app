@@ -37,7 +37,7 @@ class CourseDAO{
 
             $statement = $this->DBLink->prepare("INSERT INTO Courses(Name, Content, DataStart, 
                                                                     DataEnd, NPlaces, DNICoach) 
-                                                                    VALUES (?,?,?,?,?,?,?,?)");
+                                                                    VALUES (?,?,?,?,?,?)");
             $Name = $course->getName();
             $Content = $course->getContent();
             $DataStart = $course->getDataStart();
@@ -160,13 +160,10 @@ class CourseDAO{
     }
 
 
-    function addUser(User $user,Course $course){
+    function addUser($IDCourses,$DNI){
 
-        $statement = $this->DBLink->prepare("INSERT INTO UserRealizeCourses (IDCourse, DNI) 
+        $statement = $this->DBLink->prepare("INSERT INTO UserRealizeCourses (IDCourses, DNI) 
                                                                     VALUES (?,?)");
-
-        $IDCourses = $course->getIDCourses();
-        $DNI = $user->getDNI();
 
 
         $statement->bind_param("is",$IDCourses, $DNI);
