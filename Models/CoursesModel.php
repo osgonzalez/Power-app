@@ -109,7 +109,7 @@ class CourseDAO{
 */
 
     function delete(Course $course){
-        $statement = $this->DBLink->prepare("DELETE FROM Course WHERE IDCourses=?");
+        $statement = $this->DBLink->prepare("DELETE FROM Courses WHERE IDCourses=?");
 
         $IDCourses = $course->getIDCourses();
         $statement->bind_param("i",$IDCourses);
@@ -124,7 +124,7 @@ class CourseDAO{
 
     function edit(Course $course){
 
-        $statement = $this->DBLink->prepare("SELECT * FROM Course WHERE IDCourses=?");
+        $statement = $this->DBLink->prepare("SELECT * FROM Courses WHERE IDCourses=?");
         $IDCourses = $course->getIDCourses();
 
 
