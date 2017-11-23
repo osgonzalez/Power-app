@@ -1,3 +1,88 @@
-<form action="../Controllers/UserActionController.php?action=ADD">
-    <!-- RELLENAR ESTO CON EL FORMULARIO DE AGREGACION DE USER!!!!!! -->
-</form>
+<h3>Gestión de Cursos</h3>
+<div class="row mt">
+    <div class="col-lg-12">
+        <div class="form-panel">
+            <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Usuario</h4>
+            <form class="form-horizontal style-form" action="../Controllers/UserActionController.php?action=ADD">
+                <div class="form-group">
+                    <label class="col-sm-2 col-sm-2 control-label">DNI</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control round-form" name="DNI">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 col-sm-2 control-label">Nombre</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control round-form" name="FirstName">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 col-sm-2 control-label">Apellidos</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control round-form" name="LastName">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password"  class="form-control round-form" placeholder="" name="PasswordHash">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control round-form" name="Email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 col-sm-2 control-label">Telefono</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control round-form" name="Telephone">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 col-sm-2 control-label">Ciudad</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control round-form" name="City">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 col-sm-2 control-label">Fecha</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control round-form" name="Birthdate">
+                    </div>
+                </div>
+
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="UserType" id="optionsRadios1" value="ADMIN" checked>
+                        Admin
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="UserType" id="optionsRadios2" value="COACH">
+                        Coach
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="UserType" id="optionsRadios3" value="TDU">
+                        TDU
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="UserType" id="optionsRadios4" value="PEF">
+                        PEF
+                    </label>
+                </div>
+                <button class="submit" type="submit"><img src="../Templates/img2/add.png"></button>
+                <a class="submit" href="../Controllers/UserShowAllController.php"><img src="../Templates/img2/atras.png"></a>
+            </form>

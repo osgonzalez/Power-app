@@ -6,10 +6,9 @@
 ?>
 
 
-<ul>
-    <li><a href="../Controllers/TableShowAllController.php">Gestionar Tablas.</a></li>
+<li>
 
-    <li><a href="../Controllers/logOutController.php">LOGOUT.</a></li>
+    <h1>COACH OPTIONS</h1>
 
-</ul>
+</li>
 

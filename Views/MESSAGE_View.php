@@ -30,9 +30,9 @@ class MESSAGE{
 
         <?php
 
-        echo '<a href=\'' . $this->volver . "'>" . /*$strings['Volver']*/
-            "volver". " </a>";
-        include '../Templates/footer.html';
+        echo '<a class="submit" href=\'' . $this->volver . "'>" . /*$strings['Volver']*/
+            "". "<img src='../Templates/img2/atras.png' title='Volver'></a>";
+        include "../Templates/footer.html";
     }
 
 }

@@ -162,6 +162,28 @@ class CourseDAO{
     }
 
 
+    function addUser(User $user,Course $course){
+
+        $statement = $this->DBLink->prepare("INSERT INTO UserRealizeCourses (IDCourse, DNI) 
+                                                                    VALUES (?,?)");
+
+        $IDCourses = $course->getIDCourses();
+        $DNI = $user->getDNI();
+
+
+        $statement->bind_param("is",$IDCourses, $DNI);
+
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+        }else{
+            return "Insercion correcta";
+        }
+
+
+    }
+
+
 
 }
 

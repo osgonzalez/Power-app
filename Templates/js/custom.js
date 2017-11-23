@@ -85,12 +85,12 @@ $(document).ready(function() {
   $('[data-toggle="popover"]').popover();
 
   // Background image via data tag
-  $('[data-block-bg-img]').each(function() {
+  $('[data-block-bg-img2]').each(function() {
     // @todo - invoke backstretch plugin if multiple images
     var $this = $(this),
-      bgImg = $this.data('block-bg-img');
+      bgImg = $this.data('block-bg-img2');
 
-      $this.css('backgroundImage','url('+ bgImg + ')').addClass('block-bg-img');
+      $this.css('backgroundImage','url('+ bgImg + ')').addClass('block-bg-img2');
   });
 
   // jQuery counterUp

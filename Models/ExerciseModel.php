@@ -17,7 +17,7 @@ class ExerciseDAO
     }
 
     /**
-     * @param User $user
+     * @param Exercise $exercise
      */
     function add(Exercise $exercise){
 

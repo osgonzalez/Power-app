@@ -14,7 +14,7 @@
 		// private properties and methods go here
 		var c = {
 				bcClass: 'sf-breadcrumb',
-				menuClass: 'sf-js-enabled',
+				menuClass: 'sf-js2-enabled',
 				anchorClass: 'sf-with-ul',
 				menuArrowClass: 'sf-arrows'
 			},
