@@ -10,9 +10,9 @@ if (!IsAuthenticated()){
 
 }else{
 
-    include '../Models/UsersModel.php';
-    include '../Models/User.php';
-    $DAO = new UserDAO();
+    include '../Models/TableModel.php';
+    include '../Models/Table.php';
+    $DAO = new TableDAO();
 
     $message = $DAO->getAll();
 
@@ -23,8 +23,8 @@ if (!IsAuthenticated()){
 
     }else{
 
-        include '../Views/UsersShowAllView.php';
-        new UsersShowAllView($DAO->getLastResult());
+        include '../Views/TableShowAllView.php';
+        new TableShowAllView($DAO->getLastResult());
     }
 
 }

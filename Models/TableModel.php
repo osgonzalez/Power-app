@@ -146,7 +146,7 @@ class TableDAO
             if($resultado->num_rows == 0){
                 return 'El usuario no existe.';
             }else{
-                                                                    Content
+
                 $statement = $this->DBLink->prepare("UPDATE UsersGym SET IDTable= ?, TableType= ?, TotalScore= ?, 
                                                                     NumberOfVotes= ? WHERE IDTable=?");
                 $IDTable = $table->getIDTable();
