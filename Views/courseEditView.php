@@ -6,14 +6,7 @@ class courseEditView{
         $this->render();
     }
     function render(){
-        echo "mierdapura";
-        include '../Templates/header.html';
 
-        /*  USAD ESTO COMO EJEMPLO PARA ACCEDER A LOS DATOS!!!!!!!!!!!!!!!!!
-                echo "IDCourse: ".$this->course->getIDCourses();
-                echo "<br>";
-                echo "Nombre: ". $this->course->getName();
-        */
         ?>
         <div class="row mt">
             <div class="col-lg-12">
@@ -23,59 +16,58 @@ class courseEditView{
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">ID Curso</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control round-form" name="IDCourses" value="<?php echo $this->valores['IDCourses'];?>" >
+                                <input type="number" class="form-control round-form" name="IDCourses" value="<?php echo $this->course->getIDCourses();?>" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Nombre del Curso</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control round-form" name="Name" value="<?php echo $this->valores['Name'];?>">
+                                <input type="text" class="form-control round-form" name="Name" value="<?php echo $this->course->getName();?>">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Contenido</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control round-form" name="Content" value="<?php echo $this->valores['Content'];?>">
+                                <input type="text" class="form-control round-form" name="Content" value="<?php echo $this->course->getContent();?>">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Numero de plazas</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control round-form" name="NPlaces" value="<?php echo $this->valores['NPlaces'];?>">
+                                <input type="number" class="form-control round-form" name="NPlaces" value="<?php echo $this->course->getNPlaces();?>">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Fecha de inicio</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control round-form" name="DataStart" value="<?php echo $this->valores['DataStart'];?>">
+                                <input type="date" class="form-control round-form" name="DataStart" value="<?php echo $this->course->getDataStart();?>">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Fecha de Fin</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control round-form" name="DataEnd" value="<?php echo $this->valores['DataEnd'];?>">
+                                <input type="date" class="form-control round-form" name="DataEnd" value="<?php echo $this->course->getDataEnd();?>">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">DNI del coach</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control round-form" name="DNICoach" value="<?php echo $this->valores['DNICoach'];?>">
+                                <input type="text" class="form-control round-form" name="DNICoach" value="<?php echo $this->course->getDNICoach();?>">
                             </div>
                         </div>
 
                         <button class="submit" type="submit"><img src="../Templates/img2/add.png"></button>
-                        <a class="submit" href="../Controllers/CoursesShowAllController.php"><img src="../Templates/img2/atras.png"></a>
+                        <a class="submit" href="../Controllers/CoursesShowAllController.php?action=EDIT"><img src="../Templates/img2/atras.png"></a>
                     </form>
                 </div>
             </div>
         </div>
 
         <?php
-        include '../Templates/footer.html';
     }
 }

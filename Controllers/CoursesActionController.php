@@ -12,7 +12,7 @@ if (!IsAuthenticated() && ($_SESSION['type'] == 'ADMIN')){
     include '../Models/CoursesModel.php';
     include '../Models/Course.php';
 
-    $course = new Course($_REQUEST['IDCourse']);
+    $course = new Course($_REQUEST['IDCourses']);
     $DAO = new CourseDAO();
     $message = "";
 

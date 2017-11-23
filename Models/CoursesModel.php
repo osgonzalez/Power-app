@@ -82,15 +82,13 @@ class CourseDAO{
         }
     }
 
-/* ToDo v2.0
-    function get(User $user){
+
+    function get(Course $course){
 
 
-        $statement = $this->DBLink->prepare("SELECT * FROM UsersGym WHERE DNI=?");
-        $DNI = $user->getDNI();
-
-
-        $statement->bind_param("s",$DNI);
+        $statement = $this->DBLink->prepare("SELECT * FROM Courses WHERE IDCourses=?");
+        $IDCourses = $course->getIDCourses();
+        $statement->bind_param("i",$IDCourses);
 
         if(!$statement->execute()) {
             return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
@@ -98,15 +96,15 @@ class CourseDAO{
         }else{
             $result = $statement->get_result();
             $row = $result->fetch_assoc();
-            $user = new User($row['DNI']);
-            $user->loadDataAssoc($row);
+            $course = new Course($row['IDCourses']);
+            $course->loadDataAssoc($row);
 
-            $this->lastResult = $user;
+            $this->lastResult = $course;
             return "ok";
         }
 
     }
-*/
+
 
     function delete(Course $course){
         $statement = $this->DBLink->prepare("DELETE FROM Courses WHERE IDCourses=?");
