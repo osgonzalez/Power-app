@@ -56,7 +56,16 @@ if (!IsAuthenticated() && $_SESSION['type'] == 'ADMIN'){
         case 'exerciseAdd':
             break;
 
-
+        case 'tableEdit':
+            include '../Views/courseEditView.php';
+            include '../Models/CoursesModel.php';
+            include '../Models/Course.php';
+            $course = new Course($_REQUEST['IDCourse']);
+            $DAO = new CourseDAO();
+            $DAO->get($course);
+            $course = $DAO->getLastResult();
+            new courseEditView($course);
+            break;
 
     }
 
