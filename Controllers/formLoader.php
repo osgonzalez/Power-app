@@ -10,7 +10,20 @@ if (!IsAuthenticated() && $_SESSION['type'] == 'ADMIN'){
 
 }else{
     include '../Templates/header.html';
-    include '../Templates/lateralBar.html';
+    switch($_SESSION['type']){
+        case 'ADMIN':
+            include '../Templates/lateralBarAdmin.html';
+            break;
+        case 'COACH':
+            include '../Templates/lateralBarCoach.html';
+            break;
+        case 'PEF':
+            include '../Templates/lateralBarDeportista.html';
+            break;
+        case 'TDU':
+            include '../Templates/lateralBarDeportista.html';
+            break;
+    }
 
     switch($_REQUEST['form']){
 
