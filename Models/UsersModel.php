@@ -136,7 +136,13 @@ class UserDAO
             if($result->num_rows == 0){
                 return "El DNI: ". $DNI . " no existe en la base de datos.";
             }else{
+
+
                 $row = $result->fetch_assoc();
+
+                echo $row['PasswordHash'];
+                echo '<br>';
+                echo $user->getPasswordHash();
                 if(strcasecmp($row['PasswordHash'],$user->getPasswordHash()) == 0){
                     return 'ok';
                 }else{
