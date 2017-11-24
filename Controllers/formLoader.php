@@ -44,6 +44,7 @@ if (!IsAuthenticated() && $_SESSION['type'] == 'ADMIN'){
 
         case 'userEdit':
             include '../Views/userEditView.php';
+            new userEditView();
             break;
 
         case 'userAdd':
