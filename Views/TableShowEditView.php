@@ -1,10 +1,15 @@
 <?php
-include_once '../Functions/Authentication.php';
-class TableShowAllView{
+/**
+ * Created by PhpStorm.
+ * User: osboxes
+ * Date: 11/24/17
+ * Time: 6:45 PM
+ */
+class TableView{
 
-    var $tables;
-    function __construct($courses){
-        $this->tables = $courses;
+    var $table;
+    function __construct(Table $table){
+        $this->table = $table;
         $this->render();
     }
     function render(){
@@ -24,7 +29,7 @@ class TableShowAllView{
 
         <div class="col-md-12">
             <div class="content-panel">
-                <h4><i class="fa fa-angle-right"></i> Tablas Disponibles</h4>
+                <h4><i class="fa fa-angle-right"></i> Tabla <?php echo $this->table->getIDTable()  ?> [[<?php echo $this->table->getIDTable()  ?>]] </h4>
                 <table class="table table-striped table-advance table-hover">
                     <thead>
                     <tr>
@@ -47,7 +52,7 @@ class TableShowAllView{
 
 
 
-                            <td><?php echo '<a href="../Controllers/TableShowOneContoller.php?IDTable='.$table->getIDTable().'"><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>';?></td>
+                            <td><?php echo '<a href=""><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>';?></td>
                             <td><?php echo '<a href="../Controllers/TableActionController.php?action=DELETE&IDTable='.$table->getIDTable().'"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>';?></td>
 
                         </tr> <?php

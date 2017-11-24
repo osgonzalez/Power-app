@@ -14,13 +14,14 @@ class Table
     private $TotalScore;
     private $NumberOfVotes;
     private $Content;
-
+    private $Exercises;
 
 
 
     public function __construct($IDTable)
     {
         $this->IDTable = $IDTable;
+        $this->Exercises = array();
     }
 
 
@@ -46,6 +47,20 @@ class Table
         $this->Content = $Content;
 
     }
+
+
+    public function addExercise(Exercise $exercise){
+        $this->Exercises[] = $exercise;
+    }
+
+
+
+    public function getExercises()
+    {
+        return $this->Exercises;
+    }
+
+
 
     /**
      * @return mixed

@@ -102,10 +102,37 @@ class TableDAO
             return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
 
         }else{
+
             $result = $statement->get_result();
             $row = $result->fetch_assoc();
             $table = new Table($row['IDTable']);
             $table->loadDataAssoc($row);
+
+            //Start load exercices
+
+            $statement = $this->DBLink->prepare("SELECT IDTable, IDExercise FROM ExerciseContainInTable WHERE IDTable=?");
+            $IDTable = $table->getIDTable();
+
+
+            $statement->bind_param("s",$IDTable);
+            if(!$statement->execute()) {
+                return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+            }else{
+                $result = $statement->get_result();
+
+                $exerciseDAO = new ExerciseDAO();
+
+                while ($row = $result->fetch_assoc()){
+                    $exercise = $exerciseDAO->get(new Exercise($row[IDExercise]));
+                    $table->addExercise($exercise);
+
+
+                }
+            }
+
+            //End load exercices
+
 
             $this->lastResult = $table;
             return "ok";
