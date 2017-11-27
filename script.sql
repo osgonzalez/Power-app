@@ -36,9 +36,10 @@ CREATE TABLE ExerciseTable (
 CREATE TABLE ExerciseContainInTable (
     IDTable varchar(80) NOT NULL,
     IDExercise int NOT NULL,
+    ExercisePosition int NOT NULL,
 
 
-    PRIMARY KEY (IDTable,IDExercise),
+    PRIMARY KEY (IDTable,IDExercise,ExercisePosition),
     FOREIGN KEY (IDExercise) REFERENCES Exercise(IDExercise),
     FOREIGN KEY (IDTable) REFERENCES ExerciseTable(IDTable)
 );
