@@ -37,6 +37,7 @@ CREATE TABLE ExerciseContainInTable (
     IDTable varchar(80) NOT NULL,
     IDExercise int NOT NULL,
     ExercisePosition int NOT NULL,
+    Description varchar(255),
 
 
     PRIMARY KEY (IDTable,IDExercise,ExercisePosition),
