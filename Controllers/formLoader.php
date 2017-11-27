@@ -46,11 +46,11 @@ if (!IsAuthenticated()){
             include '../Views/userEditView.php';
             include '../Models/UsersModel.php';
             include '../Models/User.php';
-            $user = new User($_REQUEST['DNI']);
+            $exercise = new User($_REQUEST['DNI']);
             $DAO = new UserDAO();
-            $DAO->get($user);
-            $user = $DAO->getLastResult();
-            new userEditView($user);
+            $DAO->get($exercise);
+            $exercise = $DAO->getLastResult();
+            new userEditView($exercise);
             break;
 
         case 'userAdd':
@@ -58,6 +58,14 @@ if (!IsAuthenticated()){
             break;
 
         case 'exerciseEdit':
+            include '../Views/exerciseEditView.php';
+            include '../Models/ExerciseModel.php';
+            include '../Models/Exercise.php';
+            $exercise = new Exercise($_REQUEST['IDExercise']);
+            $DAO = new ExerciseDAO();
+            $DAO->get($exercise);
+            $exercise = $DAO->getLastResult();
+            new exerciseEditView($exercise);
             break;
 
         case 'exerciseAdd':

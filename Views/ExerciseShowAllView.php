@@ -40,8 +40,8 @@ class ExerciseShowAllView{
                 <td><?php  echo $ex->getName();?></td>
                 <td><?php  echo $ex->getExerciseType();?></td>
             <td><?php  echo $ex->getContent();?></td>
-            <td><p><?php  echo '<a href="../Controllers/formLoader.php?DNI='.$ex->getIDExercise().'&form=exerciseEdit"><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>';?></p></td>
-                <td><?php  echo '<a href="../Controllers/ExerciseActionController.php?DNI='.$ex->getIDExercise().'&action=DELETE"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>';?></td>
+            <td><p><?php  echo '<a href="../Controllers/formLoader.php?IDExercise='.$ex->getIDExercise().'&form=exerciseEdit"><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>';?></p></td>
+                <td><?php  echo '<a href="../Controllers/ExerciseActionController.php?IDExercise='.$ex->getIDExercise().'&action=DELETE"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>';?></td>
             </tr><?php
                 }
                 ?>
