@@ -4,7 +4,7 @@ session_start();
 
 include '../Functions/Authentication.php';
 
-if (!IsAuthenticated() && $_SESSION['type'] == 'ADMIN'){
+if (!IsAuthenticated() || $_SESSION['type'] != 'ADMIN'){
 
     header('Location:../index.php');
 
@@ -44,7 +44,13 @@ if (!IsAuthenticated() && $_SESSION['type'] == 'ADMIN'){
 
         case 'userEdit':
             include '../Views/userEditView.php';
-            new userEditView();
+            include '../Models/UsersModel.php';
+            include '../Models/User.php';
+            $user = new User($_REQUEST['DNI']);
+            $DAO = new UserDAO();
+            $DAO->get($user);
+            $user = $DAO->getLastResult();
+            new userEditView($user);
             break;
 
         case 'userAdd':
@@ -66,6 +72,10 @@ if (!IsAuthenticated() && $_SESSION['type'] == 'ADMIN'){
             $DAO->get($course);
             $course = $DAO->getLastResult();
             new courseEditView($course);
+            break;
+
+        case 'tableAdd':
+            include '../Templates/tableAddForm.html';
             break;
 
     }
