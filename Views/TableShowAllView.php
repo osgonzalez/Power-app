@@ -62,7 +62,7 @@ class TableShowAllView{
 
         <div id="showback">
             <?php
-            echo '<a href=""><img src="../Controllers/formLoader.php?form=tableAdd" style="width:45px;heigh:45px;" title="Añadir usuario"></a>';
+            echo '<a href="../Controllers/formLoader.php?form=tableAdd"><img src="../Templates/img2/addCurso.png" style="width:45px;heigh:45px;" title="Añadir Tabla"></a>';
             echo '<a href="../index.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>';
             ?>
         </div> <?php
