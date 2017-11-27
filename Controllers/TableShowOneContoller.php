@@ -23,7 +23,7 @@ if (!IsAuthenticated()){
 
     }else{
 
-        include '../Views/TableShowEditView.php';
+        include '../Views/TableShowExerciseView.php';
         new TableView($DAO->getLastResult());
     }
 

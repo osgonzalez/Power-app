@@ -33,27 +33,27 @@ class TableView{
                 <table class="table table-striped table-advance table-hover">
                     <thead>
                     <tr>
-                        <th class="hidden-phone">ID</th>
-                        <th class="hidden-phone">Tipo de tabla</th>
-                        <th class="hidden-phone">Contentenido</th>
+                        <th class="hidden-phone">ID ejercicio</th>
+                        <th class="hidden-phone">Nombre</th>
+                        <th class="hidden-phone">Tipo de ejercicio</th>
+                        <th class="hidden-phone">Descripción</th>
 
                     </tr>
                     </thead>
                     <tbody>
                     <?php
 
-                    foreach ($this->tables as $table){ ?>
+                    foreach ($this->table->getExercises() as $exercise){ ?>
                         <tr>
-                            <td> <?php echo $table->getIDTable(); ?></td>
-
-                            <td><?php  echo $table->getTableType();?></td>
-
-                            <td><?php echo $table->getContent();?></td>
-
+                            <td><?php echo $exercise->getIDExercise();?></td>
+                            <td><?php  echo $exercise->getName();?></td>
+                            <td><?php  echo $exercise->getExerciseType();?></td>
+                            <td><?php  echo $exercise->getContent();?></td>
 
 
-                            <td><?php echo '<a href=""><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>';?></td>
-                            <td><?php echo '<a href="../Controllers/TableActionController.php?action=DELETE&IDTable='.$table->getIDTable().'"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>';?></td>
+
+                            <td><?php //echo '<a href=""><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>';?></td>
+                            <td><?php //echo '<a href="../Controllers/TableActionController.php?action=DELETE&IDTable='.$table->getIDTable().'"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>';?></td>
 
                         </tr> <?php
                     }

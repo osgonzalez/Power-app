@@ -3,8 +3,8 @@ include_once '../Functions/Authentication.php';
 class TableShowAllView{
 
     var $tables;
-    function __construct($courses){
-        $this->tables = $courses;
+    function __construct($tables){
+        $this->tables = $tables;
         $this->render();
     }
     function render(){
