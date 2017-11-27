@@ -5,16 +5,13 @@ class userEditView
 
     function __construct(User $user)
     {
-        //ToDo user edit
-        include '';
+
         $this->user = $user;
         $this->render();
     }
 
     function render()
     {
-        include '../Templates/header.html';
-        include '../Templates/lateralBarAdmin.html';
 ?>
 
 
@@ -26,7 +23,7 @@ class userEditView
                         Datos Usuario
                     </h4>
 
-            <form class="form-horizontal style-form" method="get" action="../Controllers/UserActionController.php?action=EDIT">
+            <form class="form-horizontal style-form" method="post" action="../Controllers/UserActionController.php?action=EDIT">
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label">DNI</label>
                         <div class="col-sm-10">
@@ -120,6 +117,9 @@ class userEditView
                 PEF
                 </label>
             </div>
+                <button class="submit" type="submit"><img src="../Templates/img2/add.png"></button>
+                <a class="submit" href="../Controllers/UserShowAllController.php"><img src="../Templates/img2/atras.png"></a>
+            </form>
 
 
 <?php
