@@ -4,7 +4,7 @@ session_start();
 
 include '../Functions/Authentication.php';
 
-if (!IsAuthenticated() || $_SESSION['type'] != 'ADMIN'){
+if (!IsAuthenticated()){
 
     header('Location:../index.php');
 
@@ -61,6 +61,7 @@ if (!IsAuthenticated() || $_SESSION['type'] != 'ADMIN'){
             break;
 
         case 'exerciseAdd':
+            include '../Templates/exerciseAddForm.html';
             break;
 
         case 'tableEdit':
