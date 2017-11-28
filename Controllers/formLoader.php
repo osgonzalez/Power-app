@@ -89,6 +89,8 @@ if (!IsAuthenticated()){
 
         case 'tableShowOne':
             include '../Views/TableShowExercisesView.php';
+            include '../Models/ExerciseModel.php';
+            include '../Models/Exercise.php';
             include '../Models/TableModel.php';
             include '../Models/Table.php';
             $table = new Table($_REQUEST['IDTable']);
