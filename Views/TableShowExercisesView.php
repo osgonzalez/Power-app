@@ -14,22 +14,12 @@ class TableView{
         $this->render();
     }
     function render(){
-        $usuarioTipo = $_SESSION['type'];
-        switch ($usuarioTipo){
-            case 'ADMIN': include '../Templates/lateralBarAdmin.html';
-                break;
-            case 'COACH': include '../Templates/lateralBarCoach.html';
-                break;
-            case 'TDU' : include '../Templates/lateralBarDeportista.html';
-                break;
-            case 'PEF' : include '../Templates/lateralBarDeportista.html';
-                break;
-        }
+
         ?>
         <div class="row mt">
         <div class="col-lg-12">
             <div class="content-panel">
-                <h4><i class="fa fa-angle-right"></i> Tabla <?php echo $this->table->getIDTable()  ?> [[<?php echo $this->table->getIDTable()  ?>]] </h4>
+                <h4><i class="fa fa-angle-right"></i> Tabla <?php echo $this->table->getIDTable()  ?>  </h4>
                 <table class="table table-striped table-advance table-condensed">
                     <thead>
                     <tr>
