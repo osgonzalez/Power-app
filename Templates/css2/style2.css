@@ -2254,3 +2254,39 @@ label {
     width: 45px;
     height: 45px;
 }
+
+/* Cosas a mayores nuestras */
+
+table.table-items{
+    height: 0;
+    overflow: hidden;
+}
+
+#exerciseDetails:target .table-items{
+    height: 40px;
+}
+
+.closeTabla{
+    display: none;
+}
+
+#exerciseDetails:target .openTabla{
+    display: none;
+}
+
+#exerciseDetails:target .closeTabla{
+    display: block;
+}
+
+#exerciseDetails:target .table-items{
+    background: #f0f0f0 none repeat scroll 0 0;
+    height: 40px;
+    transition: height 0.4s ease-in-out 0s, background-color 0.9s ease 0s;
+}
+
+table.table-items{
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out 0s, background-color 2s ease 0s;
+}

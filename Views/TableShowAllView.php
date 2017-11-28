@@ -46,7 +46,7 @@ class TableShowAllView{
                             <td><?php echo $table->getContent();?></td>
 
 
-                            <td><?php echo '<a href="../Controllers/formLoader.php?IDTable='.$table->getIDTable().'&form=tableShowOne"><img src="../Templates/img2/ver.png" style="width:30px;height:30px;" title="Ver ejercicios de la tabla"></a>';?></td>
+                            <td><?php echo '<a href="../Controllers/formLoader.php?IDTable='.$table->getIDTable().'&form=tableShowOne"><img src="../Templates/img2/ver.png" style="width:35px;height:30px;" title="Ver ejercicios de la tabla"></a>';?></td>
                             <td><?php echo '<a href="../Controllers/TableShowOneContoller.php?IDTable='.$table->getIDTable().'"><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>';?></td>
                             <td><?php echo '<a href="../Controllers/TableActionController.php?action=DELETE&IDTable='.$table->getIDTable().'"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>';?></td>
 
