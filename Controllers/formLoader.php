@@ -88,14 +88,14 @@ if (!IsAuthenticated()){
             break;
 
         case 'tableShowOne':
-            include '../Views/TableEditView.php';
+            include '../Views/TableShowExercisesView.php';
             include '../Models/TableModel.php';
             include '../Models/Table.php';
             $table = new Table($_REQUEST['IDTable']);
             $DAO = new TableDAO();
             $DAO->get($table);
             $table = $DAO->getLastResult();
-            new tableEditView($table);
+            new TableView($table);
             break;
 
     }
