@@ -31,6 +31,7 @@ CREATE TABLE ExerciseTable (
     TotalScore decimal,
     NumberOfVotes int, 
     Content text,
+    Visibility varchar(9),
 	
     PRIMARY KEY (IDTable)
 );
@@ -142,5 +143,5 @@ INSERT INTO `Exercise`(`Name`, `ExerciseType`,`UrlImage`,`UrlVideo`,`Content`) V
 
 #Insert ExeciceTable.
 
-INSERT INTO `ExerciseTable` (`IDTable`, `TableType`, `TotalScore`, `NumberOfVotes`, `Content`) VALUES ('Muscule Table', 'Muscle', '0', '0', 'Tabla para musculatura');
-INSERT INTO `ExerciseTable` (`IDTable`, `TableType`, `TotalScore`, `NumberOfVotes`, `Content`) VALUES ('Cardio Table', 'Cardio', '0', '0', 'Tabla para cardio');
+INSERT INTO `ExerciseTable` (`IDTable`, `TableType`, `TotalScore`, `NumberOfVotes`, `Content`,`Visibility`) VALUES ('Muscule Table', 'Muscle', '0', '0', 'Tabla para musculatura','');
+INSERT INTO `ExerciseTable` (`IDTable`, `TableType`, `TotalScore`, `NumberOfVotes`, `Content`,`Visibility`) VALUES ('Cardio Table', 'Cardio', '0', '0', 'Tabla para cardio','');
