@@ -15,7 +15,7 @@ class Table
     private $NumberOfVotes;
     private $Content;
     private $Exercises;
-
+    private $Visibility;
 
 
     public function __construct($IDTable)
@@ -34,10 +34,11 @@ class Table
         $this->TotalScore = $dataArray['TotalScore'];
         $this->NumberOfVotes = $dataArray['NumberOfVotes'];
         $this->Content = $dataArray['Content'];
+        $this->Content = $dataArray['Visibility'];
 
     }
 
-    public function loadData($IDTable, $TableType, $TotalScore, $NumberOfVotes, $Content)
+    public function loadData($IDTable, $TableType, $TotalScore, $NumberOfVotes, $Content,$Visibility)
     {
 
         $this->IDTable = $IDTable;
@@ -45,6 +46,7 @@ class Table
         $this->TotalScore = $TotalScore;
         $this->NumberOfVotes = $NumberOfVotes;
         $this->Content = $Content;
+        $this->Visibility = $Visibility;
 
     }
 
@@ -84,6 +86,14 @@ class Table
     public function getTotalScore()
     {
         return $this->TotalScore;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVisibility()
+    {
+        return $this->Visibility;
     }
 
     /**
