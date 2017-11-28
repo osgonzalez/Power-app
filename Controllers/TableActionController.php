@@ -17,12 +17,12 @@ if (!IsAuthenticated() || ($_SESSION['type'] != 'ADMIN' && $_SESSION['type'] != 
     $message = "";
 
     switch($_REQUEST['action']){
-        /*case 'ADD':
-            $course->loadData($_REQUEST['Name'], $_REQUEST['Content'], $_REQUEST['DataStart'], $_REQUEST['DataEnd'], $_REQUEST['NPlaces']
-                , $_REQUEST['DNICoach']);
+        case 'ADD':
+            $table->loadData($_REQUEST['IDTable'], $_REQUEST['TableType'], $_REQUEST['TotalScore'], $_REQUEST['NumberOfVotes'], $_REQUEST['Content']
+                , $_REQUEST['Visibility']);
 
-            $message = $DAO->add($course);
-            break;*/
+            $message = $DAO->add($table);
+            break;
         case 'DELETE':
             $message = $DAO->delete($table);
             break;
@@ -37,7 +37,7 @@ if (!IsAuthenticated() || ($_SESSION['type'] != 'ADMIN' && $_SESSION['type'] != 
 
 
     include '../Views/MESSAGE_View.php';
-    new MESSAGE($message,'../Controllers/CoursesShowAllController.php');
+    new MESSAGE($message,'../Controllers/TableShowAllController');
 
 
 
