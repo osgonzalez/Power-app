@@ -4,6 +4,7 @@
  * User: osboxes
  * Date: 11/24/17
  * Time: 6:45 PM
+ * Muestra todos los ejercicios de la tabla
  */
 class TableView{
 
@@ -26,11 +27,11 @@ class TableView{
                 break;
         }
         ?>
-
-        <div class="col-md-12">
+        <div class="row mt">
+        <div class="col-lg-12">
             <div class="content-panel">
                 <h4><i class="fa fa-angle-right"></i> Tabla <?php echo $this->table->getIDTable()  ?> [[<?php echo $this->table->getIDTable()  ?>]] </h4>
-                <table class="table table-striped table-advance table-hover">
+                <table class="table table-striped table-advance table-condensed">
                     <thead>
                     <tr>
                         <th class="hidden-phone">ID ejercicio</th>
@@ -63,7 +64,6 @@ class TableView{
             </div>
         </div>
         </div>
-
 
         <div id="showback">
             <?php
