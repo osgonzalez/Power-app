@@ -41,16 +41,17 @@ class TableDAO
         }else{
 
             $statement = $this->DBLink->prepare("INSERT INTO ExerciseTable(IDTable, TableType, TotalScore, NumberOfVotes, 
-                                                                    Content) 
+                                                                    Content,Visibility) 
                    
-                                                                    VALUES (?,?,?,?,?)");
+                                                                    VALUES (?,?,?,?,?,?)");
             $IDTable = $table->getIDTable();
             $TableType = $table->getTableType();
             $TotalScore = $table->getTotalScore();
             $NumberOfVotes = $table->getNumberOfVotes();
             $Content = $table->getContent();
+            $Visibility = $table->getVisibility();
 
-            $statement->bind_param("ssiis",$IDTable,$TableType, $TotalScore, $NumberOfVotes, $Content);
+            $statement->bind_param("ssiiss",$IDTable,$TableType, $TotalScore, $NumberOfVotes, $Content,$Visibility);
 
             if(!$statement->execute()) {
                 return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
@@ -175,14 +176,15 @@ class TableDAO
             }else{
 
                 $statement = $this->DBLink->prepare("UPDATE UsersGym SET IDTable= ?, TableType= ?, TotalScore= ?, 
-                                                                    NumberOfVotes= ? WHERE IDTable=?");
+                                                                    NumberOfVotes= ?, Visibility= ? WHERE IDTable=?");
                 $IDTable = $table->getIDTable();
                 $TableType = $table->getTableType();
                 $TotalScore = $table->getTotalScore();
                 $NumberOfVotes = $table->getNumberOfVotes();
                 $Content = $table->getContent();
+                $Visibility = $table->getVisibility();
 
-                $statement->bind_param("siiss",$TableType, $TotalScore, $NumberOfVotes, $Content,$IDTable);
+                $statement->bind_param("siiss",$TableType, $TotalScore, $NumberOfVotes, $Content,$IDTable,$Visibility);
 
                 if(!$statement->execute()) {
                     return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
