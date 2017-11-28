@@ -139,7 +139,8 @@ class ExerciseDAO
             if($resultado->num_rows == 0){
                 return 'El ejercicio no existe.';
             }else{
-                $statement = $this->DBLink->prepare("UPDATE Exercise SET Name= ?, ExerciseType= ?,UrlImage= ?,UrlVideo= ?, Content= ?");
+                $statement = $this->DBLink->prepare("UPDATE Exercise SET Name= ?, ExerciseType= ?,UrlImage= ?,UrlVideo= ?, Content= ?
+                                                          WHERE IDExercise= ?");
                 $IDExercise = $exercise->getIDExercise();
                 $Name = $exercise->getName();
                 $ExerciseType = $exercise->getExerciseType();
@@ -147,7 +148,7 @@ class ExerciseDAO
                 $UrlVideo = $exercise->getUrlVideo();
                 $Content = $exercise->getContent();
 
-                $statement->bind_param("isssss",$IDExercise, $Name, $ExerciseType, $UrlImage,$UrlVideo, $Content);
+                $statement->bind_param("sssssi", $Name, $ExerciseType, $UrlImage,$UrlVideo, $Content,$IDExercise);
 
                 if(!$statement->execute()) {
                     return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
