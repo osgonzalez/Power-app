@@ -150,7 +150,25 @@ class UserDAO
 
     }
 
+    //ToDO!!!!!!!!!!!
+    function getChekin($number){
+        $statement = $this->DBLink->prepare("SELECT TOP ".$number." * FROM AthleteCheckIn ORDER BY CheckInTime");
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
 
+        }else{
+            $result = $statement->get_result();
+            $toRet = array();
+
+            while ($row = $result->fetch_assoc()){
+                $user = new User($row['DNI']);
+                $user->loadDataAssoc($row);
+                array_push($toRet,$user);
+            }
+            $this->lastResult = $toRet;
+            return "ok";
+        }
+    }
 
     function delete(User $user){
         $statement = $this->DBLink->prepare("DELETE FROM UsersGym WHERE DNI=?");
