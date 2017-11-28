@@ -1,5 +1,5 @@
 <?php
-class userEditView
+class exerciseEditView
 {
   function __construct(Exercise $exercise)
   {
