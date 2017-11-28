@@ -51,7 +51,7 @@ class CoursesShowAllView{
                 <td><?php echo $course->getNPlaces();?></td>
 
                 <td><?php echo $course->getDNICoach();?></td>
-                <td><?php echo '<a href="../Controllers/RegistroUserCourseController.php?IDCourses='.$course->getIDCourses().'"><img src="../Templates/img2/more.png" style="width:40px;height:25px;" title="Consultar deportistas inscritos"></a>';?></td>
+                <td><?php echo '<a href="../Controllers/RegistroUserCourseController.php?IDCourses='.$course->getIDCourses().'"><img src="../Templates/img2/buscar.png" style="width:30px;height:30px;" title="Consultar deportistas inscritos"></a>';?></td>
                 <td><?php echo '<a href="../Controllers/RegistroUserCourseController.php?IDCourses='.$course->getIDCourses().'"><img src="../Templates/img2/userAdd.png" style="width:30px;height:30px;" title="Añadir deportista"></a>';?></td>
                 <td><?php echo '<a href="../Controllers/formLoader.php?IDCourse='.$course->getIDCourses().'&form=courseEdit"><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>';?></td>
                 <td><?php echo '<a href="../Controllers/CoursesActionController.php?IDCourses='.$course->getIDCourses().'&action=DELETE"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>';?></td>
