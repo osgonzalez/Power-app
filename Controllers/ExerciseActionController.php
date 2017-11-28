@@ -20,7 +20,7 @@ if (!IsAuthenticated() || ($_SESSION['type'] != 'ADMIN' && $_SESSION['type'] != 
     switch ($_REQUEST['action']) {
         case 'ADD':
             $exercise = new Exercise("");
-            $exercise->loadData($_REQUEST['Name'], $_REQUEST['ExerciseType'], $_REQUEST['Content']);
+            $exercise->loadData($_REQUEST['Name'], $_REQUEST['ExerciseType'],$_REQUEST['UrlImage'],$_REQUEST['UrlVideo'], $_REQUEST['Content']);
 
             $message = $DAO->add($exercise);
             break;
@@ -30,7 +30,7 @@ if (!IsAuthenticated() || ($_SESSION['type'] != 'ADMIN' && $_SESSION['type'] != 
             break;
         case 'EDIT':
             $exercise = new Exercise($_REQUEST['IDExercise']);
-            $exercise->loadData($_REQUEST['Name'], $_REQUEST['ExerciseType'], $_REQUEST['Content']);
+            $exercise->loadData($_REQUEST['Name'], $_REQUEST['ExerciseType'],$_REQUEST['UrlImage'],$_REQUEST['UrlVideo'], $_REQUEST['Content']);
 
             $message = $DAO->edit($exercise);
             break;

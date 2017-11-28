@@ -16,6 +16,8 @@ class Exercise{
      * @param $IDExercise
      * @param $Name
      * @param $ExerciseType
+     * @param $UrlImage
+     * @param $UrlVideo
      * @param $Content
      */
     public function __construct($IDExercise)
@@ -29,7 +31,7 @@ class Exercise{
     {
         $this->Name = $Name;
         $this->ExerciseType = $ExerciseType;
-        $this->URlImage = $UrlImage;
+        $this->UrlImage = $UrlImage;
         $this->UrlVideo = $UrlVideo;
         $this->Content = $Content;
     }
@@ -39,7 +41,7 @@ class Exercise{
         $this->IDExercise = $dataArray['IDExercise'];
         $this->Name = $dataArray['Name'];
         $this->ExerciseType = $dataArray['ExerciseType'];
-        $this->URlImage = $dataArray['UrlImage'];
+        $this->UrlImage = $dataArray['UrlImage'];
         $this->UrlVideo = $dataArray['UrlVideo'];
         $this->Content = $dataArray['Content'];
     }
