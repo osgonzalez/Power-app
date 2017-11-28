@@ -10,6 +10,7 @@ class Course{
     private $DataEnd;
     private $NPlaces;
     private $DNICoach;
+    private $Users;
 
 
 
@@ -20,6 +21,7 @@ class Course{
     public function __construct($IDCourses)
     {
         $this->IDCourses = $IDCourses;
+        $this->Users= array();
     }
 
     /**
@@ -49,6 +51,19 @@ class Course{
         $this->NPlaces = $dataArray['NPlaces'];
         $this->DNICoach = $dataArray['DNICoach'];
 
+    }
+
+
+    public function addExercise(Course $users){
+        $this->users[] = $users;
+    }
+
+    /**
+     * @return array
+     */
+    public function getUsers()
+    {
+        return $this->Users;
     }
 
 

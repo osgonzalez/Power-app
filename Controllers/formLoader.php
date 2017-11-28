@@ -42,6 +42,9 @@ if (!IsAuthenticated()){
             include '../Templates/courseAddForm.html';
             break;
 
+        case 'userAddToCourse':
+
+
         case 'userEdit':
             include '../Views/userEditView.php';
             include '../Models/UsersModel.php';
