@@ -73,18 +73,29 @@ if (!IsAuthenticated()){
             break;
 
         case 'tableEdit':
-            include '../Views/courseEditView.php';
-            include '../Models/CoursesModel.php';
-            include '../Models/Course.php';
-            $course = new Course($_REQUEST['IDCourse']);
-            $DAO = new CourseDAO();
-            $DAO->get($course);
-            $course = $DAO->getLastResult();
-            new courseEditView($course);
+            include '../Views/TableEditView.php';
+            include '../Models/TableModel.php';
+            include '../Models/Table.php';
+            $table = new Table($_REQUEST['IDTable']);
+            $DAO = new TableDAO();
+            $DAO->get($table);
+            $table = $DAO->getLastResult();
+            new tableEditView($table);
             break;
 
         case 'tableAdd':
             include '../Templates/tableAddForm.html';
+            break;
+
+        case 'tableShowOne':
+            include '../Views/TableEditView.php';
+            include '../Models/TableModel.php';
+            include '../Models/Table.php';
+            $table = new Table($_REQUEST['IDTable']);
+            $DAO = new TableDAO();
+            $DAO->get($table);
+            $table = $DAO->getLastResult();
+            new tableEditView($table);
             break;
 
     }
