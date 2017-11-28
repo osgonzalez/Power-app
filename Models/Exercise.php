@@ -7,6 +7,8 @@ class Exercise{
     private $IDExercise;
     private $Name;
     private $ExerciseType;
+    private $UrlImage;
+    private $UrlVideo;
     private $Content;
 
     /**
@@ -23,10 +25,12 @@ class Exercise{
     }
 
 
-    public function loadData($Name, $ExerciseType, $Content)
+    public function loadData($Name,$ExerciseType,$UrlImage,$UrlVideo,$Content)
     {
         $this->Name = $Name;
         $this->ExerciseType = $ExerciseType;
+        $this->URlImage = $UrlImage;
+        $this->UrlVideo = $UrlVideo;
         $this->Content = $Content;
     }
 
@@ -35,6 +39,8 @@ class Exercise{
         $this->IDExercise = $dataArray['IDExercise'];
         $this->Name = $dataArray['Name'];
         $this->ExerciseType = $dataArray['ExerciseType'];
+        $this->URlImage = $dataArray['UrlImage'];
+        $this->UrlVideo = $dataArray['UrlVideo'];
         $this->Content = $dataArray['Content'];
     }
 
@@ -68,6 +74,22 @@ class Exercise{
     public function getContent()
     {
         return $this->Content;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrlImage()
+    {
+        return $this->UrlImage;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrlVideo()
+    {
+        return $this->UrlVideo;
     }
 
 

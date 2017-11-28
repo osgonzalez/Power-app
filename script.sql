@@ -18,6 +18,8 @@ CREATE TABLE Exercise (
     IDExercise int NOT NULL AUTO_INCREMENT,
     Name varchar(80) NOT NULL,
     ExerciseType varchar(50),
+    UrlImage varchar(255),
+    UrlVideo varchar(255),
     Content text,
 	
     PRIMARY KEY (IDExercise)
@@ -126,19 +128,19 @@ INSERT INTO `Courses`(`Name`, `Content`, `DataStart`, `DataEnd`, `NPlaces`, `DNI
 
 #Insert Exercise
 
-INSERT INTO `Exercise`(`Name`, `ExerciseType`, `Content`) VALUES ("Abdominales","Muscule","
-Flexiona las rodillas y pon las puntas de los pies y los talones de forma plana, bien apoyados en el suelo.");
+INSERT INTO `Exercise`(`Name`, `ExerciseType`,`UrlImage`,`UrlVideo`,`Content`) VALUES ("Abdominales","Muscule","http://paratenerelabdomenplano.com/wp-content/uploads/2013/06/crunch-abdominal1.jpg",
+	"https://www.youtube.com/watch?v=mMieHCr-H0c","Flexiona las rodillas y pon las puntas de los pies y los talones de forma plana, bien apoyados en el suelo.");
 
-INSERT INTO `Exercise`(`Name`, `ExerciseType`, `Content`) VALUES ("Flexiones","Muscule","
+INSERT INTO `Exercise`(`Name`, `ExerciseType`,`UrlImage`,`UrlVideo`,`Content`) VALUES ("Flexiones","Muscule","https://www.musculaciontotal.com/wp-content/uploads/2014/10/flexiones-de-brazos.jpg","https://www.youtube.com/watch?v=pv0k9ohkBSA","
 Boca abajo en posicion horizonral y las manos rectas a los hombros levantar tu cuerpo con los brazos.");
 
-INSERT INTO `Exercise`(`Name`, `ExerciseType`, `Content`) VALUES ("Bicicleta Estatica","fitness","
-Sube a la bici y pedalea.");
+INSERT INTO `Exercise`(`Name`, `ExerciseType`,`UrlImage`,`UrlVideo`,`Content`) VALUES ("Bicicleta Estatica","fitness","https://ejerciciosencasa.es/wp-content/uploads/2013/10/bicicleta-estatica.jpg","https://www.youtube.com/watch?v=em-NSkZVjkA",
+"Sube a la bici y pedalea.");
 
-INSERT INTO `Exercise`(`Name`, `ExerciseType`, `Content`) VALUES ("biceps","Muscule","
-levanta una pesa varias veces.");
+INSERT INTO `Exercise`(`Name`, `ExerciseType`,`UrlImage`,`UrlVideo`,`Content`) VALUES ("biceps","Muscule","https://s-media-cache-ak0.pinimg.com/originals/32/70/82/327082666917d0b04ff85f396d2476df.png"
+	,"https://www.youtube.com/watch?v=q10Vm7YVpLM","levanta una pesa varias veces.");
 
-#Insert ExeciceTable
+#Insert ExeciceTable.
 
 INSERT INTO `ExerciseTable` (`IDTable`, `TableType`, `TotalScore`, `NumberOfVotes`, `Content`) VALUES ('Muscule Table', 'Muscle', '0', '0', 'Tabla para musculatura');
 INSERT INTO `ExerciseTable` (`IDTable`, `TableType`, `TotalScore`, `NumberOfVotes`, `Content`) VALUES ('Cardio Table', 'Cardio', '0', '0', 'Tabla para cardio');

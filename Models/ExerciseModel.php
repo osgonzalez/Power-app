@@ -35,14 +35,16 @@ class ExerciseDAO
             return "El Ejercicio: ". $IDExercise . " ya existe en la base de datos.";
         }else{
 
-            $statement = $this->DBLink->prepare("INSERT INTO Exercise(Name, ExerciseType, Content) 
-                                                                    VALUES (?,?,?)");
+            $statement = $this->DBLink->prepare("INSERT INTO Exercise(Name, ExerciseType,UrlImage,UrlVideo,Content) 
+                                                                    VALUES (?,?,?,?,?)");
             $Name = $exercise->getName();
             $ExerciseType = $exercise->getExerciseType();
+            $UrlImage = $exercise->getUrlImage();
+            $UrlVideo = $exercise->getUrlVideo();
             $Content = $exercise->getContent();
 
 
-            $statement->bind_param("sss",$Name,$ExerciseType, $Content);
+            $statement->bind_param("sssss",$Name,$ExerciseType,$UrlImage,$UrlVideo, $Content);
 
             if(!$statement->execute()) {
                 return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
@@ -137,22 +139,22 @@ class ExerciseDAO
             if($resultado->num_rows == 0){
                 return 'El ejercicio no existe.';
             }else{
-                $statement = $this->DBLink->prepare("UPDATE Exercise SET Name= ?, ExerciseType= ?, Content= ?");
+                $statement = $this->DBLink->prepare("UPDATE Exercise SET Name= ?, ExerciseType= ?,UrlImage= ?,UrlVideo= ?, Content= ?");
                 $IDExercise = $exercise->getIDExercise();
                 $Name = $exercise->getName();
                 $ExerciseType = $exercise->getExerciseType();
+                $UrlImage = $exercise->getUrlImage();
+                $UrlVideo = $exercise->getUrlVideo();
                 $Content = $exercise->getContent();
 
-                $statement->bind_param("isss",$IDExercise, $Name, $ExerciseType, $Content);
+                $statement->bind_param("isssss",$IDExercise, $Name, $ExerciseType, $UrlImage,$UrlVideo, $Content);
 
                 if(!$statement->execute()) {
                     return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
                 }else{
                     return 'Se ha actualizado con exito.';
                 }
-
             }
-
         }
     }
 
