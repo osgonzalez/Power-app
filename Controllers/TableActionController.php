@@ -26,6 +26,10 @@ if (!IsAuthenticated() || ($_SESSION['type'] != 'ADMIN' && $_SESSION['type'] != 
         case 'DELETE':
             $message = $DAO->delete($table);
             break;
+        case 'ADDEXERCISE':
+            $_REQUEST['IDExercise']
+            $message = $DAO->delete($table);
+            break;
         /*case 'EDIT':
             $course->loadData($_REQUEST['Name'], $_REQUEST['Content'], $_REQUEST['DataStart'], $_REQUEST['DataEnd'], $_REQUEST['NPlaces']
                 , $_REQUEST['DNICoach']);

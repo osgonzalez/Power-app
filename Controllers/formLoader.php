@@ -108,7 +108,7 @@ if (!IsAuthenticated()){
             include '../Models/ExerciseModel.php';
             include '../Models/Exercise.php';
 
-            $exercise = new Exercise($_REQUEST['IDTable']);
+            $exercise = new Exercise($_REQUEST['IDExercise']);
             $DAO = new ExerciseDAO();
             $DAO->get($exercise);
             new ExerciseComplete($DAO->getLastResult());
