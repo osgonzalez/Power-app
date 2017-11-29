@@ -1,5 +1,7 @@
 CREATE DATABASE powerAppDB;
 
+use powerAppDB;
+
 CREATE TABLE UsersGym (
     DNI varchar(9) NOT NULL,
     UserType ENUM('ADMIN', 'COACH', 'TDU', 'PEF') NOT NULL,
@@ -53,6 +55,7 @@ CREATE TABLE TableSession (
     IDTable varchar(80) NOT NULL,
     DNI varchar(9) NOT NULL,
     SesionTime TIMESTAMP NOT NULL,
+    Comment text,
 
     PRIMARY KEY (IDTable,DNI,SesionTime),
     FOREIGN KEY (IDTable) REFERENCES ExerciseTable(IDTable),
@@ -93,6 +96,7 @@ CREATE TABLE UserRealizeCourses (
     FOREIGN KEY (DNI) REFERENCES UsersGym(DNI)
 );
 
+
 # Privilegios para `admin`@`localhost`
 
 GRANT SELECT, INSERT, UPDATE, DELETE, FILE ON *.* TO 'admin'@'localhost' IDENTIFIED BY PASSWORD '*4ACFE3202A5FF5CF467898FC58AAB1D615029441';
@@ -110,11 +114,11 @@ INSERT INTO `UsersGym`(`DNI`, `UserType`, `PasswordHash`, `FirstName`, `LastName
 
 # Insert User with pass user
 
-INSERT INTO `UsersGym`(`DNI`, `UserType`, `PasswordHash`, `FirstName`, `LastName`, `Email`, `Telephone`, `City`, `Birthdate`) VALUES ("12345678Z","PEF","ee11cbb19052e40b07aac0ca060c23ee","TDUUser","User","User@User.es","666666666","Vigo","1991/11/19");
+INSERT INTO `UsersGym`(`DNI`, `UserType`, `PasswordHash`, `FirstName`, `LastName`, `Email`, `Telephone`, `City`, `Birthdate`) VALUES ("12345678Z","PEF","ee11cbb19052e40b07aac0ca060c23ee","TDUUser","UserTDU","User@User.es","666666666","Vigo","1991/11/19");
 
 # Insert User with pass user
 
-INSERT INTO `UsersGym`(`DNI`, `UserType`, `PasswordHash`, `FirstName`, `LastName`, `Email`, `Telephone`, `City`, `Birthdate`) VALUES ("88888888Y","TDU","ee11cbb19052e40b07aac0ca060c23ee","User","User","User@User.es","666666666","Vigo","1991/11/19");
+INSERT INTO `UsersGym`(`DNI`, `UserType`, `PasswordHash`, `FirstName`, `LastName`, `Email`, `Telephone`, `City`, `Birthdate`) VALUES ("88888888Y","TDU","ee11cbb19052e40b07aac0ca060c23ee","PEFUser","UserPEF","User@User.es","666666666","Vigo","1991/11/19");
 
 #Insert Curso
 
@@ -174,3 +178,17 @@ INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`
 INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`, `Description`) VALUES ("Muscule Table","2","2","45 repeticiones");
 INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`, `Description`) VALUES ("Muscule Table","3","3","35 repeticiones");
 INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`, `Description`) VALUES ("Muscule Table","4","4","80 repeticiones");
+
+
+#Insert TableSession.
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","12345678Z","2013-08-05 18:19:03");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Cardio Table","88888888Y","2014-07-23 10:32:26");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Cardio Table","12345678Z","2016-12-08 11:08:26");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","88888888Y","2017-03-15 14:34:37");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Cardio Table","12345678Z","2017-04-12 06:34:37");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","88888888Y","2017-05-25 09:34:37");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","12345678Z","2017-05-25 06:34:37");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Cardio Table","88888888Y","2017-03-17 08:34:37");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Cardio Table","12345678Z","2016-12-23 11:08:26");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","88888888Y","2013-08-05 18:19:03");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","12345678Z","2016-12-08 11:08:26");
