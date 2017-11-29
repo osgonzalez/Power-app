@@ -103,6 +103,17 @@ if (!IsAuthenticated()){
             new TableView($table);
             break;
 
+        case 'exerciseShowOne':
+            include '../Views/ExerciseComplete.php';
+            include '../Models/ExerciseModel.php';
+            include '../Models/Exercise.php';
+
+            $exercise = new Exercise($_REQUEST['IDTable']);
+            $DAO = new ExerciseDAO();
+            $DAO->get($exercise);
+            new ExerciseComplete($DAO->getLastResult());
+            break;
+
     }
 
     include '../Templates/footer.html';
