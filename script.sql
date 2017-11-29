@@ -110,7 +110,7 @@ INSERT INTO `UsersGym`(`DNI`, `UserType`, `PasswordHash`, `FirstName`, `LastName
 
 # Insert User with pass user
 
-INSERT INTO `UsersGym`(`DNI`, `UserType`, `PasswordHash`, `FirstName`, `LastName`, `Email`, `Telephone`, `City`, `Birthdate`) VALUES ("12345678Z","PEF","ee11cbb19052e40b07aac0ca060c23ee","User","User","User@User.es","666666666","Vigo","1991/11/19");
+INSERT INTO `UsersGym`(`DNI`, `UserType`, `PasswordHash`, `FirstName`, `LastName`, `Email`, `Telephone`, `City`, `Birthdate`) VALUES ("12345678Z","PEF","ee11cbb19052e40b07aac0ca060c23ee","TDUUser","User","User@User.es","666666666","Vigo","1991/11/19");
 
 # Insert User with pass user
 
@@ -145,3 +145,25 @@ INSERT INTO `Exercise`(`Name`, `ExerciseType`,`UrlImage`,`UrlVideo`,`Content`) V
 
 INSERT INTO `ExerciseTable` (`IDTable`, `TableType`, `TotalScore`, `NumberOfVotes`, `Content`,`Visibility`) VALUES ('Muscule Table', 'Muscle', '0', '0', 'Tabla para musculatura','');
 INSERT INTO `ExerciseTable` (`IDTable`, `TableType`, `TotalScore`, `NumberOfVotes`, `Content`,`Visibility`) VALUES ('Cardio Table', 'Cardio', '0', '0', 'Tabla para cardio','');
+
+#Insert AthleteCheckIn.
+
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('12345678Z','2013-08-05 18:19:03');
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('88888888Y','2014-07-23 10:32:26');
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('12345678Z','2014-12-26 14:07:03');
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('88888888Y','2016-11-24 20:08:26');
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('12345678Z','2016-12-08 11:08:26');
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('88888888Y','2016-12-23 11:08:26');
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('12345678Z','2017-01-20 09:17:26');
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('88888888Y','2017-02-16 14:25:37');
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('12345678Z','2017-03-24 14:34:37');
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('88888888Y','2017-03-15 14:34:37');
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('12345678Z','2017-03-17 08:34:37');
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('88888888Y','2017-04-12 06:34:37');
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('12345678Z','2017-05-25 06:34:37');
+INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('88888888Y','2017-05-25 09:34:37');
+
+
+
+
+

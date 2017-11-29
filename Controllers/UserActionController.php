@@ -34,12 +34,15 @@ if (!IsAuthenticated() || $_SESSION['type'] != 'ADMIN'){
             $user->hashPassword();
             $message = $DAO->edit($user);
             break;
+        case 'CHECKIN':
+            $message = $DAO->checkIn($user);
+            break;
 
     }
 
 
         include '../Views/MESSAGE_View.php';
-        new MESSAGE($message,'../Controllers/UserShowAllController.php');
+        new MESSAGE($message,'../Controllers/CheckInShowAllController.php?number=10');
 
 
 

@@ -150,9 +150,34 @@ class UserDAO
 
     }
 
-    //ToDO!!!!!!!!!!!
+
+    function checkIn(User $user){
+
+
+            $statement = $this->DBLink->prepare("INSERT INTO AthleteCheckIn (DNI, CheckInTime) 
+                                                                    VALUES (?,?)");
+            $DNI = $user->getDNI();
+            $CheckInTime = date('Y-m-d H:i:s', (new DateTime())->getTimestamp());
+
+            $statement->bind_param("ss",$DNI,$CheckInTime);
+
+            if(!$statement->execute()) {
+                return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+            }else{
+                return "CheckIn correcto";
+            }
+
+
+
+    }
+
     function getChekin($number){
-        $statement = $this->DBLink->prepare("SELECT TOP ".$number." * FROM AthleteCheckIn ORDER BY CheckInTime");
+        if(!is_numeric($number)){
+            return 'The parameter "number" must have a valid value';
+        }
+
+        $statement = $this->DBLink->prepare("SELECT * FROM AthleteCheckIn ORDER BY CheckInTime DESC LIMIT ".$number);
         if(!$statement->execute()) {
             return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
 
@@ -162,8 +187,10 @@ class UserDAO
 
             while ($row = $result->fetch_assoc()){
                 $user = new User($row['DNI']);
-                $user->loadDataAssoc($row);
-                array_push($toRet,$user);
+                $DAO = new UserDAO();
+                $DAO->get($user);
+                $user = $DAO->getLastResult();
+                $toRet[$row['CheckInTime']] = $user;
             }
             $this->lastResult = $toRet;
             return "ok";
