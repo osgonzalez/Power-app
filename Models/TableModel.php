@@ -140,6 +140,38 @@ class TableDAO
     }
 
 
+    function addExserciseInTable(Table $table,Exercise $exercise,$Description){
+
+        $statement = $this->DBLink->prepare("SELECT * FROM ExerciseContainInTable WHERE IDTable = ?");
+
+        $IDTable = $table->getIDTable();
+        $statement->bind_param("s",$IDTable);
+
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+        }
+        $resultado = $statement->get_result();
+
+
+
+        $statement = $this->DBLink->prepare("INSERT INTO ExerciseContainInTable(IDTable, IDExercise, ExercisePosition, Description) 
+                                                  VALUES (?,?,?,?,?,?)");
+        $IDTable = $table->getIDTable();
+        $ExercisePosition = $resultado->num_rows;
+
+
+        $statement->bind_param("ssiiss",$IDTable,$TableType, $TotalScore, $NumberOfVotes, $Content,$Visibility);
+
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+        }else{
+            return "Insercion correcta";
+        }
+
+
+
+    }
 
 
     function delete(Table $table){
@@ -155,6 +187,8 @@ class TableDAO
             return 'Borrado realizado con exito';
         }
     }
+
+
 
 
     function edit(Table $table){
