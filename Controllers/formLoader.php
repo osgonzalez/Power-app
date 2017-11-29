@@ -114,6 +114,12 @@ if (!IsAuthenticated()){
             new ExerciseComplete($DAO->getLastResult());
             break;
 
+        case 'addSesion':
+            include '../Views/addSesionView.php';
+            include '../Models/Table.php';
+            $table = new Table($_REQUEST['IDTable']);
+            new addSesionView($table);
+
     }
 
     include '../Templates/footer.html';

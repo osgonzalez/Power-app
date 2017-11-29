@@ -197,6 +197,26 @@ class UserDAO
         }
     }
 
+    function addSesion(Table $table,User $user,$message,$timeStamp){
+
+        $statement = $this->DBLink->prepare("INSERT INTO TableSession (IDTable, DNI, SesionTime, Comment) 
+                                                                    VALUES (?,?,?,?)");
+
+        $DNI = $user->getDNI();
+        $IDTable = $table->getIDTable();
+
+        $statement->bind_param("ss",$IDTable,$DNI,$message,$timeStamp);
+
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+        }else{
+
+            return "Sesion guardada correctamente";
+
+        }
+    }
+
     function delete(User $user){
         $statement = $this->DBLink->prepare("DELETE FROM UsersGym WHERE DNI=?");
 

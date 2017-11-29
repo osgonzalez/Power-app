@@ -38,6 +38,10 @@ if (!IsAuthenticated() || $_SESSION['type'] != 'ADMIN'){
             $message = $DAO->checkIn($user);
             break;
 
+        case 'addSesion':
+            $message = $DAO->addSesion(new Table($_REQUEST['IDTable']),new User($_SESSION['login']),$_REQUEST['message'],$_REQUEST['timeStamp']);
+            break;
+
     }
 
 
