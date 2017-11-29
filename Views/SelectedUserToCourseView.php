@@ -68,7 +68,7 @@ class SelectedUserToCourseView
         <div id="showback">
             <?php
             echo '<a class="submit" href="../Controllers/formLoader.php?form=userAdd"><img src="../Templates/img2/userAdd.png" style="width:45px;heigh:45px;" title="Añadir usuario"></a>';
-            echo '<a class="submit" href="../index.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>';
+            echo '<a class="submit" href="../Controllers/CoursesShowAllController.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>';
             ?>
         </div> <?php
         include '../Templates/footer.html';

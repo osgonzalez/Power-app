@@ -13,7 +13,7 @@ class MESSAGE{
 
     function render(){
 
-        include '../Templates/header.html';
+       // include '../Templates/header.html';
         ?>
         <br>
         <br>
