@@ -99,6 +99,31 @@ class CourseDAO{
             $course = new Course($row['IDCourses']);
             $course->loadDataAssoc($row);
 
+
+            //Start load exercices
+
+            $statement = $this->DBLink->prepare("SELECT IDCourses, DNI FROM UserRealizeCourses WHERE IDCourses=?");
+            $IDCourses = $course->getIDCourses();
+
+
+            $statement->bind_param("i",$IDCourses);
+            if(!$statement->execute()) {
+                return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+            }else{
+                $result = $statement->get_result();
+                $userDAO = new UserDAO();
+
+                while ($row = $result->fetch_assoc()){
+                    $userDAO->get(new User($row['DNI']));
+                    $course->addUsers($userDAO->getLastResult());
+                }
+            }
+
+            //End load exercices
+
+
+
             $this->lastResult = $course;
             return "ok";
         }

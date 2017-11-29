@@ -1,9 +1,9 @@
 <?php
-class usersInCoureView{
+class usersInCourseView{
 
-    var $users;
-    function __construct($users){
-        $this->users = $users;
+
+    function __construct(Course $course){
+        $this->course = $course;
         $this->render();
     }
     function render(){
@@ -13,10 +13,6 @@ class usersInCoureView{
             case 'ADMIN': include '../Templates/lateralBarAdmin.html';
                 break;
             case 'COACH': include '../Templates/lateralBarCoach.html';
-                break;
-            case 'TDU' : include '../Templates/lateralBarDeportista.html';
-                break;
-            case 'PEF' : include '../Templates/lateralBarDeportista.html';
                 break;
         }
 ?>
@@ -38,7 +34,7 @@ class usersInCoureView{
             </tr>
             </thead>
             <tbody>
-  <?php      foreach ($this->users as $user){ ?>
+  <?php      foreach ($this->course->getUsers() as $user){ ?>
             <tr>
                 <td><?php  echo $user->getDNI(); ?></td>
                 <td><?php  echo $user->getUserType(); ?></td>

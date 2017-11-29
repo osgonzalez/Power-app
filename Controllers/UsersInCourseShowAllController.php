@@ -1,5 +1,6 @@
 <?php
 include '../Functions/Authentication.php';
+session_start();
 
 if (!IsAuthenticated() || ($_SESSION['type'] != 'ADMIN' && $_SESSION['type'] != 'COACH')){
 
@@ -7,11 +8,14 @@ if (!IsAuthenticated() || ($_SESSION['type'] != 'ADMIN' && $_SESSION['type'] != 
 
 }else{
 
+    include '../Models/CoursesModel.php';
+    include '../Models/Course.php';
     include '../Models/UsersModel.php';
     include '../Models/User.php';
-    $DAO = new UserDAO();
+    $course = new Course($_REQUEST['IDCourses']);
+    $DAO = new CourseDAO();
 
-    $message = $DAO->getAll();
+    $message = $DAO->get($course);
 
     if(strcasecmp($message,"ok") != 0){
 
@@ -20,8 +24,8 @@ if (!IsAuthenticated() || ($_SESSION['type'] != 'ADMIN' && $_SESSION['type'] != 
 
     }else{
 
-        include '../Views/UsersShowAllView.php';
-        new UsersShowAllView($DAO->getLastResult());
+        include '../Views/usersInCourseView.php';
+        new usersInCourseView($DAO->getLastResult());
     }
 
 }

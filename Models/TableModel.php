@@ -125,10 +125,8 @@ class TableDAO
                 $exerciseDAO = new ExerciseDAO();
 
                 while ($row = $result->fetch_assoc()){
-                    $exercise = $exerciseDAO->get(new Exercise($row[IDExercise]));
-                    $table->addExercise($exercise);
-
-
+                    $exerciseDAO->get(new Exercise($row['IDExercise']));
+                    $table->addExercise($exerciseDAO->getLastResult());
                 }
             }
 
