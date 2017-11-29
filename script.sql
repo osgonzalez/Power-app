@@ -21,7 +21,7 @@ CREATE TABLE Exercise (
     UrlImage varchar(255),
     UrlVideo varchar(255),
     Content text,
-	
+
     PRIMARY KEY (IDExercise)
 );
 
@@ -29,10 +29,10 @@ CREATE TABLE ExerciseTable (
     IDTable varchar(80) NOT NULL,
     TableType varchar(50),
     TotalScore decimal,
-    NumberOfVotes int, 
+    NumberOfVotes int,
     Content text,
     Visibility varchar(9),
-	
+
     PRIMARY KEY (IDTable)
 );
 
@@ -63,7 +63,7 @@ CREATE TABLE TableSession (
 CREATE TABLE AthleteCheckIn (
     DNI varchar(9) NOT NULL,
     CheckInTime TIMESTAMP NOT NULL,
-    
+
     PRIMARY KEY (DNI,CheckInTime),
     FOREIGN KEY (DNI) REFERENCES UsersGym(DNI)
 );
@@ -163,7 +163,14 @@ INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('88888888Y','2017-04-
 INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('12345678Z','2017-05-25 06:34:37');
 INSERT INTO `AthleteCheckIn`(`DNI`, `CheckInTime`) VALUES ('88888888Y','2017-05-25 09:34:37');
 
+#Insert ExerciseContainInTable
+INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`, `Description`) VALUES ("Cardio Table","1","1","25 repeticiones");
+INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`, `Description`) VALUES ("Cardio Table","1","2","10 repeticiones");
+INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`, `Description`) VALUES ("Cardio Table","2","3","20 repeticiones");
+INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`, `Description`) VALUES ("Cardio Table","3","4","15 repeticiones");
+INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`, `Description`) VALUES ("Cardio Table","4","5","15 minutos");
 
-
-
-
+INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`, `Description`) VALUES ("Muscule Table","1","1","50 repeticiones");
+INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`, `Description`) VALUES ("Muscule Table","2","2","45 repeticiones");
+INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`, `Description`) VALUES ("Muscule Table","3","3","35 repeticiones");
+INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`, `Description`) VALUES ("Muscule Table","4","4","80 repeticiones");
