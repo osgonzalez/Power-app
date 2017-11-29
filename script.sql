@@ -192,3 +192,14 @@ INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Cardio Table
 INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Cardio Table","12345678Z","2016-12-23 11:08:26");
 INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","88888888Y","2013-08-05 18:19:03");
 INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","12345678Z","2016-12-08 11:08:26");
+
+
+#Insert UserRealizeCourses
+INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("1","12345678Z");
+INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("2","12345678Z");
+INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("3","88888888Y");
+INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("4","88888888Y");
+INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("4","11111111H");
+INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("3","11111111H");
+INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("2","11111111H");
+INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("1","11111111H");
