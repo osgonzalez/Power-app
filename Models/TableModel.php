@@ -157,10 +157,11 @@ class TableDAO
         $statement = $this->DBLink->prepare("INSERT INTO ExerciseContainInTable(IDTable, IDExercise, ExercisePosition, Description) 
                                                   VALUES (?,?,?,?,?,?)");
         $IDTable = $table->getIDTable();
-        $ExercisePosition = $resultado->num_rows;
+        $IDExercise = $exercise->getIDExercise();
+        $ExercisePosition = ($resultado->num_rows)+1;
 
 
-        $statement->bind_param("ssiiss",$IDTable,$TableType, $TotalScore, $NumberOfVotes, $Content,$Visibility);
+        $statement->bind_param("siis",$IDTable,$IDExercise, $ExercisePosition, $Description);
 
         if(!$statement->execute()) {
             return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;

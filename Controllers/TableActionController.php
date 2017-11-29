@@ -27,16 +27,11 @@ if (!IsAuthenticated() || ($_SESSION['type'] != 'ADMIN' && $_SESSION['type'] != 
             $message = $DAO->delete($table);
             break;
         case 'ADDEXERCISE':
-            $_REQUEST['IDExercise']
-            $message = $DAO->delete($table);
-            break;
-        /*case 'EDIT':
-            $course->loadData($_REQUEST['Name'], $_REQUEST['Content'], $_REQUEST['DataStart'], $_REQUEST['DataEnd'], $_REQUEST['NPlaces']
-                , $_REQUEST['DNICoach']);
 
-            $message = $DAO->edit($course);
+            include '../Models/Exercise.php';
+            $message = $DAO->addExserciseInTable($table,new Exercise($_REQUEST['IDExercise']),$_REQUEST['Description']);
             break;
-*/
+
     }
 
 
