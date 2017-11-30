@@ -2,10 +2,11 @@
 
 class SelectExerciseToTableView
 {
-
+    var $IDTable;
     var $exercises;
-    function __construct($exercises){
+    function __construct($exercises,$IDTable){
         $this->exercises = $exercises;
+        $this->IDTable = $IDTable;
         $this->render();
     }
     function render(){
@@ -36,14 +37,14 @@ class SelectExerciseToTableView
                     </tr>
                     </thead>
                     <tbody>
-                    <?php      foreach ($this->$exercises as $exercise){ ?>
+                    <?php      foreach ($this->exercises as $exercise){ ?>
                         <tr>
                         <td><?php  echo $exercise->getIDExercise(); ?></td>
                         <td><?php  echo $exercise->getName(); ?></td>
                         <td><?php  echo $exercise->getExerciseType(); ?></td>
 
-                        <td><?php  echo '<a href="../Controllers/tableActionController.php?action=ADDEXERCISE&IDExercise='.$exercise->getIDExercise().
-                                '&IDExercise='.$_REQUEST['IDExercise'].'">
+                        <td><?php  echo '<a href="../Controllers/TableActionController.php?action=ADDEXERCISE&IDExercise='.$exercise->getIDExercise().
+                                '&IDTable='.$this->IDTable.'">
                                         <img src="../Templates/img2/add.png" style="width:30px;height:30px;" title="Añadir ejercicio"></a>'; ?></td>
 
                         </tr><?php

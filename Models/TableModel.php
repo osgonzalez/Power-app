@@ -155,7 +155,7 @@ class TableDAO
 
 
         $statement = $this->DBLink->prepare("INSERT INTO ExerciseContainInTable(IDTable, IDExercise, ExercisePosition, Description) 
-                                                  VALUES (?,?,?,?,?,?)");
+                                                  VALUES (?,?,?,?)");
         $IDTable = $table->getIDTable();
         $IDExercise = $exercise->getIDExercise();
         $ExercisePosition = ($resultado->num_rows)+1;

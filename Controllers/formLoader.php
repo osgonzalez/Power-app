@@ -77,7 +77,7 @@ if (!IsAuthenticated()){
                     include '../Templates/lateralBarDeportista.html';
                     break;
             }
-
+            break;
 
         case 'userEdit':
             include '../Templates/header.html';
@@ -275,8 +275,26 @@ if (!IsAuthenticated()){
             include '../Models/Table.php';
             $table = new Table($_REQUEST['IDTable']);
             new addSesionView($table);
+            break;
+
+        case 'addExerciseInTable':
+
+            include '../Views/selectExerciseToTableView.php';
+            include '../Models/ExerciseModel.php';
+            include '../Models/Exercise.php';
+            include '../Models/TableModel.php';
+            include '../Models/Table.php';
+
+            $DAO = new ExerciseDAO();
+            $message = $DAO->getAll();
+
+            new SelectExerciseToTableView($DAO->getLastResult(),$_REQUEST['IDTable']);
 
     }
+
+
+
+
 
     include '../Templates/footer.html';
 }
