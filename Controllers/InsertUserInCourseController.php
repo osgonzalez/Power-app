@@ -10,8 +10,8 @@ if (!IsAuthenticated() || ($_SESSION['type'] != 'ADMIN')){
 
 }else{
 
-    include '../Templates/header.html';
-    include '../Templates/lateralBarAdmin.html';
+   // include '../Templates/header.html';
+   // include '../Templates/lateralBarAdmin.html';
     include '../Models/CoursesModel.php';
 
 

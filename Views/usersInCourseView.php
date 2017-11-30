@@ -56,7 +56,7 @@ class usersInCourseView{
 
         <div class="row mt">
             <div style="display: flex; justify-content: center;" >
-                <a class="submit" href="../Controllers/RegistroUserCourseController.php?IDCourses='.$this->course->getIDCourses().'"><img src="../Templates/img2/userAdd.png" style="width:45px;heigh:45px;" title="Inscribir usuario"></a>
+                <a class="submit" href="../Controllers/RegistroUserCourseController.php?IDCourses=<?php echo $this->course->getIDCourses()?>"><img src="../Templates/img2/userAdd.png" style="width:45px;heigh:45px;" title="Inscribir usuario"></a>
                 <a class="submit" href="../Controllers/CoursesShowAllController.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>
             </div>
         </div>

@@ -51,7 +51,7 @@ class SelectedUserToCheckInView
                         <td><?php  echo $user->getCity(); ?></td>
                         <td><?php  echo $user->getBirthdate(); ?></td>
                         <td><?php  echo '<a href="../Controllers/UserActionController.php?DNI='.$user->getDNI().'&action=CHECKIN">
-                                        <img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>'; ?></td>
+                                        <img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="CheckIn"></a>'; ?></td>
 
 
                         </tr><?php
