@@ -42,7 +42,7 @@ class TableView{
 
 
 
-                            <td><?php echo '<a href="ExerciseComplete.php" target="_blank" onclick="window.open(this.href, this.target, \'width=300,height=400\'); return false;"><img src="../Templates/img2/ver.png" style="width:30px;height:20px;" title="Ver ejercicio"></a>';?></td>
+                            <td><?php echo '<a href="../Controllers/formLoader.php?form=exerciseShowOne&IDExercise="'. $exercise->getIDExercise() .'" target="_blank" onclick="window.open(this.href, this.target, \'width=300,height=400\'); return false;"><img src="../Templates/img2/ver.png" style="width:30px;height:20px;" title="Ver ejercicio"></a>';?></td>
 
                         </tr>
                         <?php
@@ -54,11 +54,13 @@ class TableView{
         </div>
         </div>
 
-        <div id="showback">
-            <?php
-            //echo '<a href=""><img src="../Templates/img2/addCurso.png" style="width:45px;heigh:45px;" title="Añadir usuario"></a>';
-            echo '<a href="../index.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>';
-            ?>
-        </div> <?php
+        <div class="row mt">
+            <div style="display: flex; justify-content: center;" >
+                <a href="../Controllers/formLoader.php?form=addExerciseInTable"><img src="../Templates/img2/addCurso.png" style="width:45px;heigh:45px;" title="Añadir Ejercicio a Tabla"></a>
+                <a href="../index.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;margin-left: 10px;" title="Atrás"></a>
+            </div>
+        </div>
+
+         <?php
     }
 }
