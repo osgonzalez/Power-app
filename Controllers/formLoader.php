@@ -9,25 +9,27 @@ if (!IsAuthenticated()){
     header('Location:../index.php');
 
 }else{
-    include '../Templates/header.html';
-    switch($_SESSION['type']){
-        case 'ADMIN':
-            include '../Templates/lateralBarAdmin.html';
-            break;
-        case 'COACH':
-            include '../Templates/lateralBarCoach.html';
-            break;
-        case 'PEF':
-            include '../Templates/lateralBarDeportista.html';
-            break;
-        case 'TDU':
-            include '../Templates/lateralBarDeportista.html';
-            break;
-    }
+
+
 
     switch($_REQUEST['form']){
 
         case 'courseEdit':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.html';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.html';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+            }
             include '../Views/courseEditView.php';
             include '../Models/CoursesModel.php';
             include '../Models/Course.php';
@@ -39,13 +41,58 @@ if (!IsAuthenticated()){
             break;
 
         case 'courseAdd':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.html';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.html';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+            }
             include '../Templates/courseAddForm.html';
             break;
 
         case 'userAddToCourse':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.html';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.html';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+            }
 
 
         case 'userEdit':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.html';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.html';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+            }
             include '../Views/userEditView.php';
             include '../Models/UsersModel.php';
             include '../Models/User.php';
@@ -57,10 +104,40 @@ if (!IsAuthenticated()){
             break;
 
         case 'userAdd':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.html';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.html';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+            }
             include '../Templates/userAddForm.html';
             break;
 
         case 'exerciseEdit':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.html';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.html';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+            }
             include '../Views/exerciseEditView.php';
             include '../Models/ExerciseModel.php';
             include '../Models/Exercise.php';
@@ -72,10 +149,40 @@ if (!IsAuthenticated()){
             break;
 
         case 'exerciseAdd':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.html';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.html';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+            }
             include '../Templates/exerciseAddForm.html';
             break;
 
         case 'tableEdit':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.html';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.html';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+            }
             include '../Views/TableEditView.php';
             include '../Models/TableModel.php';
             include '../Models/Table.php';
@@ -87,10 +194,40 @@ if (!IsAuthenticated()){
             break;
 
         case 'tableAdd':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.html';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.html';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+            }
             include '../Templates/tableAddForm.html';
             break;
 
         case 'tableShowOne':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.html';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.html';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+            }
             include '../Views/TableShowExercisesView.php';
             include '../Models/ExerciseModel.php';
             include '../Models/Exercise.php';
@@ -104,9 +241,11 @@ if (!IsAuthenticated()){
             break;
 
         case 'exerciseShowOne':
+            include '../Templates/headerSimple.html';
             include '../Views/ExerciseComplete.php';
             include '../Models/ExerciseModel.php';
             include '../Models/Exercise.php';
+
 
             $exercise = new Exercise($_REQUEST['IDExercise']);
             $DAO = new ExerciseDAO();
@@ -115,6 +254,21 @@ if (!IsAuthenticated()){
             break;
 
         case 'addSesion':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.html';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.html';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.html';
+                    break;
+            }
             include '../Views/addSesionView.php';
             include '../Models/Table.php';
             $table = new Table($_REQUEST['IDTable']);
