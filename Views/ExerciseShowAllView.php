@@ -41,10 +41,10 @@ class ExerciseShowAllView{
                 <td><?php echo $ex->getIDExercise();?></td>
                 <td><?php  echo $ex->getName();?></td>
                 <td><?php  echo $ex->getExerciseType();?></td>
-            <td><?php  echo "<a href='".$ex->getUrlImage(). "'>Imagen de ".$ex->getName();?></td>
-            <td><?php  echo "<a href='".$ex->getUrlVideo(). "'>Video de ".$ex->getName();?></td>
+            <td><img src="<?php  echo $ex->getUrlImage();?>" " width="90px" height="60px"></td>
+            <td><iframe src="<?php  echo $ex->getUrlVideo();?>" width="220px" height="110px"></iframe></td>
             <td><?php  echo $ex->getContent();?></td>
-            <td><p><?php  echo '<a href="../Controllers/formLoader.php?IDExercise='.$ex->getIDExercise().'&form=exerciseEdit"><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>';?></p></td>
+            <td><p><?php  echo '<a href../Controllers/formLoader.php?IDExercise='.$ex->getIDExercise().'&form=exerciseEdit"><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>';?></p></td>
                 <td><?php  echo '<a href="../Controllers/ExerciseActionController.php?IDExercise='.$ex->getIDExercise().'&action=DELETE"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>';?></td>
             </tr><?php
                 }
@@ -53,14 +53,17 @@ class ExerciseShowAllView{
                 </table>
             </div>
         </div>
+        </div>
+
+        <div class="row mt">
+            <div style="display: flex; justify-content: center;" >
+                <a class="submit" href="../Controllers/formLoader.php?form=exerciseAdd"><img src="../Templates/img2/add.png" style="width:45px;heigh:45px;" title="Añadir Ejercicio"></a>
+                <a href="../index.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;margin-left: 10px;" title="Atrás"></a>
+            </div>
+        </div>
 
 
-        <div id="showback">
-        <?php
-        echo '<a class="submit" href="../Controllers/formLoader.php?form=exerciseAdd"><img src="../Templates/img2/add.png" style="width:45px;height:45px;" title="Añadir ejercicio"></a>';
-        echo '<a class="submit" href="../index.php"><img src="../Templates/img2/atras.png" style="width:45px;height:45px;" title="Atrás"></a>';
-        ?>
-        </div> <?php
+         <?php
         include '../Templates/footer.html';
     }
 }

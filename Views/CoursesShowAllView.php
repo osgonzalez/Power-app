@@ -65,13 +65,14 @@ class CoursesShowAllView{
         </div>
         </div>
 
+        <div class="row mt">
+            <div style="display: flex; justify-content: center;" >
+                <a href="../Controllers/formLoader.php?form=courseAdd"><img src="../Templates/img2/addCurso.png" style="width:45px;heigh:45px;" title="Añadir usuario"></a>
+                <a href="../index.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>
+            </div>
+        </div>
 
-        <div id="showback">
         <?php
-        echo '<a href="../Controllers/formLoader.php?form=courseAdd"><img src="../Templates/img2/addCurso.png" style="width:45px;heigh:45px;" title="Añadir usuario"></a>';
-        echo '<a href="../index.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>';
-?>
-        </div> <?php
         include '../Templates/footer.html';
     }
 }

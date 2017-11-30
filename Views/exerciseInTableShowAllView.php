@@ -53,14 +53,14 @@ class exerciseInTableShowAllView
         </div>
         </div>
 
+        <div class="row mt">
+            <div style="display: flex; justify-content: center;" >
+                <a class="submit" href="../Controllers/formLoader.php?form=exerciseAddToTable"><img src="../Templates/img2/add.png" style="width:45px;height:45px;" title="Añadir ejercicio"></a>
+                <a class="submit" href="../Controllers/TableShowAllController.php?number=10"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>
+            </div>
+        </div>
 
-        <div id="showback">
-            <?php
-            /*el primer boton hay que cambiarlo cuando este el controlador*/
-            echo '<a class="submit" href="../Controllers/formLoader.php?form=exerciseAddToTable"><img src="../Templates/img2/add.png" style="width:45px;height:45px;" title="Añadir ejercicio"></a>';
-            echo '<a class="submit" href="../Controllers/TableShowAllController.php?number=10"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>';
-            ?>
-        </div> <?php
+         <?php
         include '../Templates/footer.html';
     }
 }

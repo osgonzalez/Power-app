@@ -60,14 +60,14 @@ class UsersShowAllView
     </div>
 </div>
         </div>
+        <div class="row mt">
+            <div style="display: flex; justify-content: center;" >
+                <a class="submit" href="../Controllers/formLoader.php?form=userAdd"><img src="../Templates/img2/userAdd.png" style="width:45px;heigh:45px;" title="Añadir usuario"></a>
+                <a class="submit" href="../index.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>
+            </div>
+        </div>
 
-
-        <div id="showback">
-            <?php
-            echo '<a class="submit" href="../Controllers/formLoader.php?form=userAdd"><img src="../Templates/img2/userAdd.png" style="width:45px;heigh:45px;" title="Añadir usuario"></a>';
-            echo '<a class="submit" href="../index.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>';
-            ?>
-        </div> <?php
+        <?php
         include '../Templates/footer.html';
     }
 }

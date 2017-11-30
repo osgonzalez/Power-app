@@ -21,6 +21,7 @@ class TableShowAllView{
                 break;
         }
         ?>
+        <h3>Gestión de Usuarios</h3>
 
         <div class="col-md-12">
             <div class="content-panel">
@@ -46,7 +47,7 @@ class TableShowAllView{
                             <td><?php echo $table->getContent();?></td>
 
 
-                            <td><?php echo '<a href="../Controllers/formLoader.php?IDTable='.$table->getIDTable().'&form=tableShowOne"><img src="../Templates/img2/ver.png" style="width:35px;height:30px;" title="Ver ejercicios de la tabla"></a>';?></td>
+                            <td><?php echo '<a href="../Controllers/formLoader.php?IDTable='.$table->getIDTable().'&form=tableShowOne"><img src="../Templates/img2/ver.png" style="width:30px;height:20px;" title="Ver ejercicios de la tabla"></a>';?></td>
                             <td><?php echo '<a href="../Controllers/TableShowOneContoller.php?IDTable='.$table->getIDTable().'"><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>';?></td>
                             <td><?php echo '<a href="../Controllers/TableActionController.php?action=DELETE&IDTable='.$table->getIDTable().'"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>';?></td>
 
@@ -59,13 +60,13 @@ class TableShowAllView{
         </div>
         </div>
 
-
-        <div id="showback">
-            <?php
-            echo '<a href="../Controllers/formLoader.php?form=tableAdd"><img src="../Templates/img2/addCurso.png" style="width:45px;heigh:45px;" title="Añadir Tabla"></a>';
-            echo '<a href="../index.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>';
-            ?>
-        </div> <?php
+        <div class="row mt">
+            <div style="display: flex; justify-content: center;" >
+                <a href="../Controllers/formLoader.php?form=tableAdd"><img src="../Templates/img2/addCurso.png" style="width:45px;heigh:45px;" title="Añadir Tabla"></a>
+                <a href="../index.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>
+            </div>
+        </div>
+        <?php
         include '../Templates/footer.html';
     }
 }
