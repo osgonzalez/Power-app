@@ -42,7 +42,7 @@ class TableView{
 
 
 
-                            <td><?php echo '<a href="../Controllers/formLoader.php?form=exerciseShowOne&IDExercise="'. $exercise->getIDExercise() .'" target="_blank" onclick="window.open(this.href, this.target, \'width=300,height=400\'); return false;"><img src="../Templates/img2/ver.png" style="width:30px;height:20px;" title="Ver ejercicio"></a>';?></td>
+                            <td><?php echo '<a href="../Controllers/formLoader.php?form=exerciseShowOne&IDExercise='. $exercise->getIDExercise() .' target="blank" onclick="window.open(this.href, this.target, \'width=300,height=400\'); return false;"><img src="../Templates/img2/ver.png" style="width:30px;height:20px;" title="Ver ejercicio"></a>';?></td>
 
                         </tr>
                         <?php
