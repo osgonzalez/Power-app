@@ -33,7 +33,9 @@ if (!IsAuthenticated()){
             include '../Views/courseEditView.php';
             include '../Models/CoursesModel.php';
             include '../Models/Course.php';
-            $course = new Course($_REQUEST['IDCourse']);
+            include '../Models/UsersModel.php';
+            include '../Models/User.php';
+            $course = new Course($_REQUEST['IDCourses']);
             $DAO = new CourseDAO();
             $DAO->get($course);
             $course = $DAO->getLastResult();
