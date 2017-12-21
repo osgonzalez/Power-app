@@ -115,6 +115,33 @@ class UserDAO
 
     }
 
+    function getUserByType(User $user){
+
+
+        $statement = $this->DBLink->prepare("SELECT * FROM UsersGym WHERE UserType=?");
+        $UserType = $user->getUserType();
+
+
+        $statement->bind_param("s",$UserType);
+
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+        }else{
+            $result = $statement->get_result();
+            $toRet = array();
+
+            while ($row = $result->fetch_assoc()){
+                $user = new User($row['DNI']);
+                $user->loadDataAssoc($row);
+                array_push($toRet,$user);
+            }
+            $this->lastResult = $toRet;
+            return "ok";
+        }
+
+    }
+
 
 
     function login(User $user){

@@ -81,7 +81,7 @@ class User
     /**
      * @return mixed
      */
-    public function getDNI()
+    public function getDNI():string
     {
         return $this->DNI;
     }
@@ -89,15 +89,20 @@ class User
     /**
      * @return mixed
      */
-    public function getUserType()
+    public function getUserType():string
     {
         return $this->UserType;
+    }
+
+    public function setUserType(string $UserType)
+    {
+        $this->UserType = $UserType;
     }
 
     /**
      * @return mixed
      */
-    public function getPasswordHash()
+    public function getPasswordHash():string
     {
         return $this->PasswordHash;
     }
@@ -105,7 +110,7 @@ class User
     /**
      * @return mixed
      */
-    public function getFirstName()
+    public function getFirstName():string
     {
         return $this->FirstName;
     }
@@ -113,15 +118,20 @@ class User
     /**
      * @return mixed
      */
-    public function getLastName()
+    public function getLastName():string
     {
         return $this->LastName;
+    }
+
+    public function getFullName():string
+    {
+        return $this->FirstName." ".$this->LastName;
     }
 
     /**
      * @return mixed
      */
-    public function getEmail()
+    public function getEmail():string
     {
         return $this->Email;
     }
@@ -137,7 +147,7 @@ class User
     /**
      * @return mixed
      */
-    public function getCity()
+    public function getCity():string
     {
         return $this->City;
     }

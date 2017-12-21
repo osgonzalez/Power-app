@@ -42,24 +42,7 @@ if (!IsAuthenticated()){
             new courseEditView($course);
             break;
 
-        case 'courseAdd':
-            include '../Templates/header.html';
-            switch($_SESSION['type']){
-                case 'ADMIN':
-                    include '../Templates/lateralBarAdmin.html';
-                    break;
-                case 'COACH':
-                    include '../Templates/lateralBarCoach.html';
-                    break;
-                case 'PEF':
-                    include '../Templates/lateralBarDeportista.html';
-                    break;
-                case 'TDU':
-                    include '../Templates/lateralBarDeportista.html';
-                    break;
-            }
-            include '../Templates/courseAddForm.html';
-            break;
+
 
         case 'userAddToCourse':
             include '../Templates/header.html';
