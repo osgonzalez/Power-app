@@ -1,8 +1,11 @@
 <?php
 class courseEditView{
     var $course;
-    function __construct(Course $course){
+    var $coachs;
+
+    function __construct(Course $course,array $coachs){
         $this->course = $course;
+        $this->coachs = $coachs;
         $this->render();
     }
     function render(){
@@ -57,7 +60,16 @@ class courseEditView{
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">DNI del coach</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control round-form" name="DNICoach" value="<?php echo $this->course->getDNICoach();?>">
+                                <select name="DNICoach" required>
+                                    <?php
+                                    echo "<option selected value='".$this->course->getDNICoach()."'>".$this->course->getDNICoach()."</option>";
+                                    foreach ($this->coachs as $coach){
+                                        echo "<option value='".$coach->getDNI()."'>".$coach->getDNI()." (".$coach->getFullName().")</option>";
+                                    }
+                                    ?>
+
+                                </select>
+
                             </div>
                         </div>
 

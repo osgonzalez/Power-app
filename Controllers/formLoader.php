@@ -33,13 +33,24 @@ if (!IsAuthenticated()){
             include '../Views/courseEditView.php';
             include '../Models/CoursesModel.php';
             include '../Models/Course.php';
-            include '../Models/UsersModel.php';
             include '../Models/User.php';
+            include '../Models/UsersModel.php';
             $course = new Course($_REQUEST['IDCourses']);
             $DAO = new CourseDAO();
             $DAO->get($course);
             $course = $DAO->getLastResult();
-            new courseEditView($course);
+
+
+            $userDAO = new UserDAO();
+            $user = new User("");
+            $user->setUserType("COACH");
+            $userDAO->getUserByType($user);
+
+            $message = $DAO->getAll();
+            $coachs = $userDAO->getLastResult();
+
+
+            new courseEditView($course,$coachs);
             break;
 
 

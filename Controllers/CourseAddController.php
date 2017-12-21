@@ -15,9 +15,9 @@ if (!IsAuthenticated()){
     $DAO = new UserDAO();
     $user = new User("");
     $user->setUserType("COACH");
-    $DAO->getUserByType($user);
+    $message = $DAO->getUserByType($user);
 
-    $message = $DAO->getAll();
+
 
     if(strcasecmp($message,"ok") != 0){
 
