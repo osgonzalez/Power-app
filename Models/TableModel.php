@@ -111,7 +111,7 @@ class TableDAO
 
             //Start load exercices
 
-            $statement = $this->DBLink->prepare("SELECT IDTable, IDExercise FROM ExerciseContainInTable WHERE IDTable=?");
+            $statement = $this->DBLink->prepare("SELECT * FROM ExerciseContainInTable WHERE IDTable=?");
             $IDTable = $table->getIDTable();
 
 
@@ -126,7 +126,9 @@ class TableDAO
 
                 while ($row = $result->fetch_assoc()){
                     $exerciseDAO->get(new Exercise($row['IDExercise']));
-                    $table->addExercise($exerciseDAO->getLastResult());
+                    $exercise = $exerciseDAO->getLastResult();
+                    $exercise->setDuracion($row['Description']);
+                    $table->addExercise($exercise);
                 }
             }
 

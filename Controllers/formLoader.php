@@ -189,24 +189,6 @@ if (!IsAuthenticated()){
             new tableEditView($table);
             break;
 
-        case 'tableAdd':
-            include '../Templates/header.html';
-            switch($_SESSION['type']){
-                case 'ADMIN':
-                    include '../Templates/lateralBarAdmin.html';
-                    break;
-                case 'COACH':
-                    include '../Templates/lateralBarCoach.html';
-                    break;
-                case 'PEF':
-                    include '../Templates/lateralBarDeportista.html';
-                    break;
-                case 'TDU':
-                    include '../Templates/lateralBarDeportista.html';
-                    break;
-            }
-            include '../Templates/tableAddForm.html';
-            break;
 
         case 'tableShowOne':
             include '../Templates/header.html';

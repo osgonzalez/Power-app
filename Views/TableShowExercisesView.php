@@ -27,6 +27,7 @@ class TableView{
                         <th class="hidden-phone">Nombre</th>
                         <th class="hidden-phone">Tipo de ejercicio</th>
                         <th class="hidden-phone">Descripción</th>
+                        <th class="hidden-phone">Repeticiones</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -39,6 +40,7 @@ class TableView{
                             <td><?php  echo $exercise->getName();?></td>
                             <td><?php  echo $exercise->getExerciseType();?></td>
                             <td><?php  echo $exercise->getContent();?></td>
+                            <td><?php  echo $exercise->getDuracion();?></td>
 
 
 

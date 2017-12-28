@@ -10,6 +10,8 @@ class Exercise{
     private $UrlImage;
     private $UrlVideo;
     private $Content;
+    private $duracion;
+
 
     /**
      * Exercise constructor.
@@ -92,6 +94,22 @@ class Exercise{
     public function getUrlVideo()
     {
         return $this->UrlVideo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDuracion()
+    {
+        return $this->duracion;
+    }
+
+    /**
+     * @param mixed $duracion
+     */
+    public function setDuracion($duracion)
+    {
+        $this->duracion = $duracion;
     }
 
 

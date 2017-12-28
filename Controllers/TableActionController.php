@@ -22,8 +22,19 @@ if (!IsAuthenticated() || ($_SESSION['type'] != 'ADMIN' && $_SESSION['type'] != 
                 , $_REQUEST['Visibility']);
 
             $message = $DAO->add($table);
+
+            include '../Models/Exercise.php';
+            $listaDuracion = $_REQUEST['listaDuracion'];
+            $ejercicios = $_REQUEST['listaEjercicios'];
+
+            for($i=0;$i<count($ejercicios);$i++){
+                $message = $DAO->addExserciseInTable($table,new Exercise($ejercicios[$i]),$listaDuracion[$i]);
+            }
+
+
             include '../Views/MESSAGE_View.php';
             new MESSAGE($message,'../Controllers/TableShowAllController.php');
+
             break;
         case 'DELETE':
             $message = $DAO->delete($table);
