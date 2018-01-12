@@ -15,7 +15,7 @@
             <div class="project">
                 <div class="photo-wrapper">
                     <div class="photo">
-                        <a class="fancybox" href="../Controllers/CoursesShowAllController.php"><img class="img-responsive" src="../Templates/img2/cursos2.jpg" alt=""></a>
+                        <a class="fancybox" href="../Controllers/CoursesShowAllController.php"><img class="img-responsive" src="../Templates/img/testCursos.jpg" title="Ver Cursos"></a>
                     </div>
                     <div class="overlay">
                         Ver cursos
@@ -31,7 +31,7 @@
             <div class="project">
                 <div class="photo-wrapper">
                     <div class="photo">
-                        <a class="fancybox" href="../Controllers/TableShowAllController.php"><img class="img-responsive" src="../Templates/img2/tablas.gif" alt=""></a>
+                        <a class="fancybox" href="../Controllers/TableShowAllController.php"><img class="img-responsive" src="../Templates/img/testTabla.jpg" title="Ver Tablas"></a>
                     </div>
                     <div class="overlay">
                         Ver tablas
