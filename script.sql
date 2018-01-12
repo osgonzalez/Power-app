@@ -1,4 +1,5 @@
-CREATE DATABASE powerAppDB;
+DROP DATABASE IF EXISTS `powerAppDB`;
+CREATE DATABASE `powerAppDB` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 use powerAppDB;
 

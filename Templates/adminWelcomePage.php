@@ -14,7 +14,7 @@
             <div class="project">
                 <div class="photo-wrapper">
                     <div class="photo">
-                        <a class="fancybox" href="../Controllers/UserShowAllController.php"><img class="img-responsive" src="../Templates/img2/usuarios.jpg" alt=""></a>
+                        <a class="fancybox" href="../Controllers/UserShowAllController.php"><img class="img-responsive" src="../Templates/img/usersImage.jpg" title="Ver Usuarios"></a>
                     </div>
                     <div class="overlay">
                         Ver usuarios
@@ -30,7 +30,7 @@
             <div class="project">
                 <div class="photo-wrapper">
                     <div class="photo">
-                        <a class="fancybox" href="../Controllers/CoursesShowAllController.php"><img class="img-responsive" src="../Templates/img2/cursos2.jpg" alt=""></a>
+                        <a class="fancybox" href="../Controllers/CoursesShowAllController.php"><img class="img-responsive" src="../Templates/img/testCursos.jpg" title="Ver Cursos"></a>
                     </div>
                     <div class="overlay">
                         Ver cursos
@@ -46,7 +46,7 @@
             <div class="project">
                 <div class="photo-wrapper">
                     <div class="photo">
-                        <a class="fancybox" href="../Controllers/TableShowAllController.php"><img class="img-responsive" src="../Templates/img2/tablas.gif" alt=""></a>
+                        <a class="fancybox" href="../Controllers/TableShowAllController.php"><img class="img-responsive" src="../Templates/img/testTabla.jpg" title="Ver Tablas"></a>
                     </div>
                     <div class="overlay">
                         Ver tablas
@@ -62,7 +62,7 @@
             <div class="project">
                 <div class="photo-wrapper">
                     <div class="photo">
-                        <a class="fancybox" href="../Controllers/ExerciseShowAllController.php"><img class="img-responsive" src="../Templates/img2/ejercicios.jpg" alt=""></a>
+                        <a class="fancybox" href="../Controllers/ExerciseShowAllController.php"><img class="img-responsive" src="../Templates/img/testEjercicios.jpg" title="Ver Ejercicios"></a>
                     </div>
                     <div class="overlay">
                         Ver ejercicios
@@ -78,7 +78,7 @@
             <div class="project">
                 <div class="photo-wrapper">
                     <div class="photo">
-                        <a class="fancybox" href="../Controllers/CheckInShowAllController.php?number=10"><img class="img-responsive" src="../Templates/img2/entradas.jpg" alt=""></a>
+                        <a class="fancybox" href="../Controllers/CheckInShowAllController.php?number=10"><img class="img-responsive" src="../Templates/img/signUp.jpg" title="Ver Entradas"></a>
                     </div>
                     <div class="overlay">
                         Ver entradas

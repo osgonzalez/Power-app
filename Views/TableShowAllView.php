@@ -32,6 +32,7 @@ class TableShowAllView{
                         <th class="hidden-phone">ID</th>
                         <th class="hidden-phone">Tipo de tabla</th>
                         <th class="hidden-phone">Contenido</th>
+                        <th class="hidden-phone">Imprimir</th>
 
                     </tr>
                     </thead>
@@ -47,6 +48,7 @@ class TableShowAllView{
                             <td><?php echo $table->getContent();?></td>
 
 
+                            <td><?php echo '<a href="../Controllers/PrintTableController.php?IDTable='.$table->getIDTable().'"><i class="fa fa-print" aria-hidden="true" title="Imprimir tabla" style="font-size: 3em; color: grey;"></i></a>';?></td>
                             <td><?php echo '<a href="../Controllers/formLoader.php?IDTable='.$table->getIDTable().'&form=tableShowOne"><img src="../Templates/img2/ver.png" style="width:30px;height:20px;" title="Ver ejercicios de la tabla"></a>';?></td>
                             <td><?php echo '<a href="../Controllers/TableActionController.php?action=DELETE&IDTable='.$table->getIDTable().'"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>';?></td>
 

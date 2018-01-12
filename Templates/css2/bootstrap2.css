@@ -5991,7 +5991,7 @@ button.close {
           transform: translate3d(0, 0, 0);
 }
 @-ms-viewport {
-  width: device-width;
+  /*width: device-width;*/
 }
 .visible-xs,
 .visible-sm,
@@ -6201,3 +6201,10 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap2.css2.map */
+
+
+.row .mt :hover{
+  transition: opacity 1s;
+  transition-delay: 0.1s;
+
+}
