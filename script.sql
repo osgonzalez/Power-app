@@ -19,7 +19,7 @@ CREATE TABLE UsersGym (
 
 CREATE TABLE Notifications (
 IDNotification int NOT NULL AUTO_INCREMENT,
-Notificacion varchar(255),
+Notification varchar(255),
 Notificationdate date,
 
 PRIMARY KEY (IDNotification)
@@ -215,5 +215,5 @@ INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("1","11111111H");
 
 
 #Insert Notifications
-INSERT INTO `Notifications`(`Notificacion`,`Notificationdate`) VALUES ("Notificacion de prueba 1","2018/01/03");
-INSERT INTO `Notifications`(`Notificacion`,`Notificationdate`) VALUES ("Notificacion de prueba 2","2018/01/04");
+INSERT INTO `Notifications`(`Notification`,`Notificationdate`) VALUES ("Notificacion de prueba 1","2018/01/03");
+INSERT INTO `Notifications`(`Notification`,`Notificationdate`) VALUES ("Notificacion de prueba 2","2018/01/04");
