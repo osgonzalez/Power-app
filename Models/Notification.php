@@ -48,7 +48,7 @@ class Notification
   /**
    * @return mixed
    */
-  public function getNotification()
+  public function getNotificationDate()
   {
       return $this->Notificationdate;
   }
