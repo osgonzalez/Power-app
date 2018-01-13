@@ -17,6 +17,14 @@ CREATE TABLE UsersGym (
     PRIMARY KEY (DNI)
 );
 
+CREATE TABLE Notifications (
+IDNotification int NOT NULL AUTO_INCREMENT,
+Notificacion varchar(255),
+Notificationdate date,
+
+PRIMARY KEY (IDNotification)
+);
+
 CREATE TABLE Exercise (
     IDExercise int NOT NULL AUTO_INCREMENT,
     Name varchar(80) NOT NULL,
@@ -204,3 +212,8 @@ INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("4","11111111H");
 INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("3","11111111H");
 INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("2","11111111H");
 INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("1","11111111H");
+
+
+#Insert Notifications
+INSERT INTO `Notifications`(`Notificacion`,`Notificationdate`) VALUES ("Notificacion de prueba 1","2018/01/03");
+INSERT INTO `Notifications`(`Notificacion`,`Notificationdate`) VALUES ("Notificacion de prueba 2","2018/01/04");
