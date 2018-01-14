@@ -105,6 +105,15 @@ CREATE TABLE UserRealizeCourses (
     FOREIGN KEY (DNI) REFERENCES UsersGym(DNI)
 );
 
+CREATE TABLE Space (
+    IDSpace int(11) NOT NULL AUTO_INCREMENT,
+    NameSpace varchar(50) NOT NULL,
+    Description varchar(150),
+    Capacity int(5),
+
+    PRIMARY KEY (IDSpace)
+);
+
 
 # Privilegios para `admin`@`localhost`
 
