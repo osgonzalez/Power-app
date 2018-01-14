@@ -67,8 +67,8 @@
                     <span>Gestión de Espacios</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="">Ver todos los espacios</a></li>
-                    <li><a  href="">Añadir espacio</a></li>
+                    <li><a  href="../Controllers/SpaceShowAllController.php">Ver todos los espacios</a></li>
+                    <li><a  href="../Controllers/formLoader.php?form=spaceAdd">Añadir espacio</a></li>
                 </ul>
             </li>
 
