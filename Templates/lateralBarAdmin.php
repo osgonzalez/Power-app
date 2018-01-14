@@ -110,7 +110,7 @@
                     <span>Calendario</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="">Ver calendario</a></li>
+                    <li><a  href="../Controllers/calendarioController.php">Ver calendario</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
