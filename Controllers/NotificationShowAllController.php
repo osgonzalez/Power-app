@@ -1,9 +1,10 @@
 <?php
+
 session_start();
 
 include '../Functions/Authentication.php';
 
-if (!IsAuthenticated()){
+if (!IsAuthenticated()|| $_SESSION['type'] != 'ADMIN'){
 
     header('Location:../index.php');
 
