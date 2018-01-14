@@ -118,6 +118,32 @@ if (!IsAuthenticated()){
             include '../Templates/userAddForm.html';
             break;
 
+            case 'notificationEdit':
+                include '../Templates/header.html';
+                switch($_SESSION['type']){
+                    case 'ADMIN':
+                        include '../Templates/lateralBarAdmin.php';
+                        break;
+                    case 'COACH':
+                        include '../Templates/lateralBarCoach.php';
+                        break;
+                    case 'PEF':
+                        include '../Templates/lateralBarDeportista.php';
+                        break;
+                    case 'TDU':
+                        include '../Templates/lateralBarDeportista.php';
+                        break;
+                }
+                include '../Views/NotificationEditView.php';
+                include '../Models/NotificationModel.php';
+                include '../Models/Notification.php';
+                $notification = new Notification($_REQUEST['IDNotification']);
+                $DAO = new NotificationDAO();
+                $DAO->get($notification);
+                $notification = $DAO->getLastResult();
+                new NotificationEditView($notification);
+                break;
+
             case 'notificationAdd':
                 include '../Templates/header.html';
                 switch($_SESSION['type']){
@@ -136,6 +162,11 @@ if (!IsAuthenticated()){
                 }
                 include '../Templates/notificationAddForm.html';
                 break;
+
+
+
+
+
 
         case 'exerciseEdit':
             include '../Templates/header.html';

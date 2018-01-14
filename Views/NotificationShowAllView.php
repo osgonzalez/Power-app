@@ -45,7 +45,7 @@ function render(){
                     <td><?php  echo $notification->getNotificationDate(); ?></td>
 
 
-                    <td><?php  echo '<img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>'; ?></td>
+                    <td><p><?php  echo '<a href="../Controllers/formLoader.php?IDNotification='.$notification->getIDNotification().'&form=notificationEdit"><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>';?></p></td>
                     <td><?php  echo '<a href="../Controllers/NotificationActionController.php?IDNotification='.$notification->getIDNotification().'&action=DELETE"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>'; ?></td>
 
                     </tr><?php
