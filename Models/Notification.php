@@ -11,7 +11,12 @@ class Notification
       $this->IDNotification = $IDNotification;
 
   }
-
+  /**
+   * User constructor.
+   * @param $IDNotification
+   * @param $Notification
+   * @param $Notificationdate
+   */
 
   public function loadData($Notification,$Notificationdate)
   {
