@@ -11,13 +11,13 @@ class CoursesShowAllView{
         include '../Templates/header.html';
         $usuarioTipo = $_SESSION['type'];
         switch ($usuarioTipo){
-            case 'ADMIN': include '../Templates/lateralBarAdmin.html';
+            case 'ADMIN': include '../Templates/lateralBarAdmin.php';
                 break;
-            case 'COACH': include '../Templates/lateralBarCoach.html';
+            case 'COACH': include '../Templates/lateralBarCoach.php';
                 break;
-            case 'TDU' : include '../Templates/lateralBarDeportista.html';
+            case 'TDU' : include '../Templates/lateralBarDeportista.php';
                 break;
-            case 'PEF' : include '../Templates/lateralBarDeportista.html';
+            case 'PEF' : include '../Templates/lateralBarDeportista.php';
                 break;
         }
         ?>

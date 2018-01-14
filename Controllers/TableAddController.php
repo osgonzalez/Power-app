@@ -4,16 +4,16 @@ include '../Templates/header.html';
 
     switch($_SESSION['type']){
         case 'ADMIN':
-            include '../Templates/lateralBarAdmin.html';
+            include '../Templates/lateralBarAdmin.php';
             break;
         case 'COACH':
-            include '../Templates/lateralBarCoach.html';
+            include '../Templates/lateralBarCoach.php';
             break;
         case 'PEF':
-            include '../Templates/lateralBarDeportista.html';
+            include '../Templates/lateralBarDeportista.php';
             break;
         case 'TDU':
-            include '../Templates/lateralBarDeportista.html';
+            include '../Templates/lateralBarDeportista.php';
             break;
     }
 

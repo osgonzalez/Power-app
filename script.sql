@@ -64,6 +64,7 @@ CREATE TABLE TableSession (
     IDTable varchar(80) NOT NULL,
     DNI varchar(9) NOT NULL,
     SesionTime TIMESTAMP NOT NULL,
+    Record VARCHAR(9) NOT NULL ,
     Comment text,
 
     PRIMARY KEY (IDTable,DNI,SesionTime),

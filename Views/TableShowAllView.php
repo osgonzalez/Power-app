@@ -11,13 +11,13 @@ class TableShowAllView{
         include '../Templates/header.html';
         $usuarioTipo = $_SESSION['type'];
         switch ($usuarioTipo){
-            case 'ADMIN': include '../Templates/lateralBarAdmin.html';
+            case 'ADMIN': include '../Templates/lateralBarAdmin.php';
                 break;
-            case 'COACH': include '../Templates/lateralBarCoach.html';
+            case 'COACH': include '../Templates/lateralBarCoach.php';
                 break;
-            case 'TDU' : include '../Templates/lateralBarDeportista.html';
+            case 'TDU' : include '../Templates/lateralBarDeportista.php';
                 break;
-            case 'PEF' : include '../Templates/lateralBarDeportista.html';
+            case 'PEF' : include '../Templates/lateralBarDeportista.php';
                 break;
         }
         ?>
@@ -31,8 +31,10 @@ class TableShowAllView{
                     <tr>
                         <th class="hidden-phone">ID</th>
                         <th class="hidden-phone">Tipo de tabla</th>
-                        <th class="hidden-phone">Contenido</th>
+                        <th class="hidden-phone" style="text-align: center">Iniciar Sesión</th>
                         <th class="hidden-phone">Imprimir</th>
+                        <th class="hidden-phone">Ver</th>
+                        <th class="hidden-phone">Borrar</th>
 
                     </tr>
                     </thead>
@@ -45,9 +47,7 @@ class TableShowAllView{
 
                             <td><?php  echo $table->getTableType();?></td>
 
-                            <td><?php echo $table->getContent();?></td>
-
-
+                            <td style="text-align: center"><?php echo '<a href="../Controllers/TableSessionController.php?IDTable='.$table->getIDTable().'"><i class="fa fa-clock-o" aria-hidden="true" title="Iniciar Sesión" style="font-size: 3em; color: grey;"></i></a>';?></td>
                             <td><?php echo '<a href="../Controllers/PrintTableController.php?IDTable='.$table->getIDTable().'"><i class="fa fa-print" aria-hidden="true" title="Imprimir tabla" style="font-size: 3em; color: grey;"></i></a>';?></td>
                             <td><?php echo '<a href="../Controllers/formLoader.php?IDTable='.$table->getIDTable().'&form=tableShowOne"><img src="../Templates/img2/ver.png" style="width:30px;height:20px;" title="Ver ejercicios de la tabla"></a>';?></td>
                             <td><?php echo '<a href="../Controllers/TableActionController.php?action=DELETE&IDTable='.$table->getIDTable().'"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>';?></td>

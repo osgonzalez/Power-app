@@ -231,4 +231,41 @@ class TableDAO
 
         }
     }
+
+
+    function addSession(Table $table,$record,$comment){
+
+        $statement = $this->DBLink->prepare("SELECT * FROM TableSession WHERE IDTable = ?, DNI = ? , SesionTime = ?");
+        $SesionTime = (new DateTime())->getTimestamp();
+        $IDTable = $table->getIDTable();
+        $statement->bind_param("sss",$IDTable,$_SESSION['login'],$SesionTime);
+
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+        }
+        $resultado = $statement->get_result();
+
+        if($resultado->num_rows != 0){
+            return "La sesión ya existe en la base de datos.";
+        }else{
+
+            $statement = $this->DBLink->prepare("INSERT INTO TableSession(IDTable, DNI, SesionTime, Record, 
+                                                                    Comment) 
+                                                                    VALUES (?,?,?,?,?)");
+            $IDTable = $table->getIDTable();
+            $dni = $_SESSION['login'];
+
+            $statement->bind_param("sssss",$IDTable,$SesionTime, $dni, $record, $comment);
+
+            if(!$statement->execute()) {
+                return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+            }else{
+                return "Insercion correcta";
+            }
+
+        }
+
+
+    }
 }

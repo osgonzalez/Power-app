@@ -8,7 +8,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
 
-            <h5 class="centered">Perico Delos Palotes</h5>
+            <h5 style="color: #000000" class="centered">Bienvenido: <span style="color:#A81D23;"><?php echo $_SESSION['login'] ?></span></h5>
 
             <li class="mt">
                 <a href="../index.php">

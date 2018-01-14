@@ -6,7 +6,7 @@
  * Time: 6:45 PM
  * Muestra todos los ejercicios de la tabla
  */
-class TableView{
+class TableShowExercisesView{
 
     var $table;
     function __construct(Table $table){

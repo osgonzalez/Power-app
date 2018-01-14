@@ -26,13 +26,13 @@ if (!IsAuthenticated()){
             include '../Templates/lateralBarAdmin.html';
             break;
         case 'COACH':
-            include '../Templates/lateralBarCoach.html';
+            include '../Templates/lateralBarCoach.php';
             break;
         case 'PEF':
-            include '../Templates/lateralBarDeportista.html';
+            include '../Templates/lateralBarDeportista.php';
             break;
         case 'TDU':
-            include '../Templates/lateralBarDeportista.html';
+            include '../Templates/lateralBarDeportista.php';
             break;
     }*/
     include '../Views/TablePrintExerciseView.php';
