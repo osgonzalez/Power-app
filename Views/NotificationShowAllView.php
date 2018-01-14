@@ -58,7 +58,7 @@ function render(){
     </div>
     <div class="row mt">
         <div style="display: flex; justify-content: center;" >
-            <a class="submit" href="../Controllers/formLoader.php?form=spaceAdd"><img src="../Templates/img2/userAdd.png" style="width:45px;heigh:45px;" title="Añadir espacio"></a>
+            <a class="submit" href="../Controllers/formLoader.php?form=notificationAdd"><img src="../Templates/img2/userAdd.png" style="width:45px;heigh:45px;" title="Añadir espacio"></a>
             <a class="submit" href="../index.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;" title="Atrás"></a>
         </div>
     </div>
