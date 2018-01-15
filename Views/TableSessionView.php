@@ -19,6 +19,23 @@ class TableSessionView
 
         <link rel="stylesheet" href="../Templates/css/Cronometro.css">
         <script type="text/javascript" src="../Templates/js/Cronometro.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script>
+            var cadena= "";
+            $(document).ready(function(){
+                $("#guardarTiempo").click(function(){
+                    cadena+=$("#horas").text();
+                    cadena+=$("#minutos").text();
+                    cadena+=$("#segundos").text();
+                    $("#resultado").val(cadena);
+                });
+
+            });
+
+
+        </script>
+
 
         <form method="post" action="../Controllers/TableSessionController.php?DNI=<?php echo $_SESSION['login'].'&IdTable='.$this->table->getIDTable()?>">
 
@@ -72,25 +89,28 @@ class TableSessionView
 
 
 
-            <div id="cronometro">
-                <div id="reloj">
-                    0 00 00 00
-                </div>
-                <form name="cron" action="#">
-                    <input type="button" id="boton" value="Empezar" name="boton1"   />
-                    <input type="button" id="boton" value="Parar" name="boton2"  />
-                    <br>
-                </form>
+            <div id="contenedor">
+                <div class="reloj" id="Horas">00</div>
+                <div class="reloj" id="Minutos">:00</div>
+                <div class="reloj" id="Segundos">:00</div>
+                <div class="reloj" id="Centesimas">:00</div>
+                <input type="button" class="boton" id="inicio" value="Inicio &#9658;" onclick="inicios();">
+                <input type="button" class="boton" id="parar" value="Parar &#8718;" onclick="parars();" disabled>
+                <input type="button" class="boton" id="continuar" value="Continuar &#8634;" onclick="inicios();" disabled>
+                <input type="button" class="boton" id="reinicio" value="Reiniciar &#8635;" onclick="reinicios();" disabled>
             </div>
 
+            <input type="text" id="Record" name="Record" value="0"> <button id="guardarTiempo">guardar</button>
 
 
             <div class="row mt">
                 <div style="display: flex; justify-content: center;" >
-                    <a href="../Controllers/formLoader.php?form=addExerciseInTable&IDTable=<?php echo $this->table->getIDTable();?>"><i class="fa fa-check-square" title="Finalizar Sesión" style="font-size: 4em; color: #212529;"></i></a>
+                    <button class="submit" type="submit" ><img src="../Templates/img2/add.png"></button>
                     <a href="../Controllers/TableShowAllController.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;margin-left: 10px;" title="Atrás"></a>
                 </div>
             </div>
+
+
         </form>
 
         <?php

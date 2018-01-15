@@ -127,8 +127,8 @@ class TableAddView
 
                             <div class="dosBox" id="selected">
 
-                                <ol class="lista">
-                                </ol>
+                                <ul class="lista">
+                                </ul>
 
 
                             </div>
@@ -140,13 +140,16 @@ class TableAddView
 
 
 
-                            <button class="submit" type="submit"><img src="../Templates/img2/add.png"></button>
+                            <button class="submit" title="Crear Tabla" type="submit"><img src="../Templates/img2/add.png"></button>
 
                         </div>
 
-                        <button class="boton" type="button">Cambio</button>
+
 
                     </form>
+                    <br>
+                    <br>
+                    <img class="boton" style="width: 50px;height: 50px" src="../Templates/img2/add.png">
                     <a class="submit" href="../Controllers/TableShowAllController.php"><img src="../Templates/img2/atras.png"></a>
                 </div>
             </div>

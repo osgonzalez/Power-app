@@ -15,7 +15,7 @@ if (!IsAuthenticated()){
     header('Location:../index.php');
 
 }else{
-    if($_REQUEST['DNI'] == null) {
+    if(!isset($_REQUEST['DNI'])) {
         include '../Templates/header.html';
         switch ($_SESSION['type']) {
             case 'ADMIN':
@@ -44,7 +44,8 @@ if (!IsAuthenticated()){
         new TableSessionView($table);
     }else{
 
-
+        echo 'chachi';
+        echo $_REQUEST['Record'];
 
 
     }
