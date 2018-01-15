@@ -65,6 +65,15 @@
                     <li><a  href="../Controllers/calendarioController.php">Ver calendario</a></li>
                 </ul>
             </li>
+            <li class="sub-menu">
+                <a href="javascript:;" >
+                    <i class="fa fa-table"></i>
+                    <span>Gestión de Notificaciones</span>
+                </a>
+                <ul class="sub">
+                    <li><a  href="../Controllers/NotificationShowAllController.php">Ver Notificaciones</a></li>
+                </ul>
+            </li>
 
 
         </ul>
