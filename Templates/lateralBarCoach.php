@@ -56,6 +56,17 @@
                 </ul>
             </li>
 
+            <li class="sub-menu">
+                <a href="javascript:;" >
+                    <i class=" fa fa-calendar-o"></i>
+                    <span>Calendario</span>
+                </a>
+                <ul class="sub">
+                    <li><a  href="../Controllers/calendarioController.php">Ver calendario</a></li>
+                </ul>
+            </li>
+
+
         </ul>
         <!-- sidebar menu end-->
     </div>
