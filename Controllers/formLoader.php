@@ -303,6 +303,101 @@ if (!IsAuthenticated()){
             new addSesionView($table);
             break;
 
+        case 'spaceBookingEdit':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.php';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.php';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.php';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.php';
+                    break;
+            }
+            include '../Views/userEditView.php';
+            include '../Models/SpaceBookingModel.php';
+            include '../Models/SpaceBooking.php';
+            $spaceBooking = new SpaceBooking($_REQUEST['IDSpace'], $_REQUEST['DNI'], $_REQUEST['DateBooking'], $_REQUEST['TimeBooking']);
+            $DAO = new SpaceBookingDAO();
+            $DAO->get($spaceBooking);
+            $spaceBooking = $DAO->getLastResult();
+            new SpaceBookingEditView($spaceBooking);
+            break;
+
+        case 'spaceBookingAdd':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.php';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.php';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.php';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.php';
+                    break;
+            }
+            include '../Views/spaceBookingAddView.php';
+            include '../Models/SpaceBooking.php';
+            include '../Models/SpaceBookingModel.php';
+            $DAO = new SpaceBookingDAO();
+            $space = $DAO->idName();
+            new spaceBookingAddView($space);
+            break;
+
+        case 'spaceAdd':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.php';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.php';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.php';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.php';
+                    break;
+            }
+            include '../Templates/spaceAddForm.html';
+            break;
+
+        case 'spaceEdit':
+            include '../Templates/header.html';
+            switch($_SESSION['type']){
+                case 'ADMIN':
+                    include '../Templates/lateralBarAdmin.php';
+                    break;
+                case 'COACH':
+                    include '../Templates/lateralBarCoach.php';
+                    break;
+                case 'PEF':
+                    include '../Templates/lateralBarDeportista.php';
+                    break;
+                case 'TDU':
+                    include '../Templates/lateralBarDeportista.php';
+                    break;
+            }
+            include '../Views/spaceEditView.php';
+            include '../Models/SpaceModel.php';
+            include '../Models/Space.php';
+            $space = new Space($_REQUEST['IDSpace']);
+            $DAO = new SpaceDAO();
+            $DAO->get($space);
+            $space = $DAO->getLastResult();
+            new spaceEditView($space);
+            break;
+
         case 'addExerciseInTable':
 
             include '../Views/selectExerciseToTableView.php';

@@ -78,8 +78,8 @@
                     <span>Reserva de Espacios</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="">Ver todas las reservas</a></li>
-                    <li><a  href="">Crear reserva</a></li>
+                    <li><a  href="../Controllers/SpaceBookingShowAllController.php">Ver todas las reservas</a></li>
+                    <li><a  href="../Controllers/formLoader.php?form=spaceBookingAdd">Crear reserva</a></li>
                 </ul>
             </li>
 
