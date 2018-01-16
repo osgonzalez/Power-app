@@ -25,9 +25,9 @@ class TableSessionView
 
             function appendTime() {
 
-                horas = $("#Horas").text();
-                minutos = $("#Minutos").text();
-                segundos = $("#Segundos").text();
+                horas = parseInt($("#Horas").text())*60;
+                minutos = parseInt($("#Minutos").text());
+                segundos = parseInt($("#Segundos").text())/60;
                 $("#Record").val(horas + minutos + segundos);
             }
 
@@ -88,9 +88,9 @@ class TableSessionView
 
             <div id="contenedor">
                 <div class="reloj" id="Horas">00</div>
-                <div class="reloj" id="Minutos">:00</div>
-                <div class="reloj" id="Segundos">:00</div>
-                <div class="reloj" id="Centesimas">:00</div>
+                <div class="reloj" id="Minutos">00</div>
+                <div class="reloj" id="Segundos">00</div>
+                <div class="reloj" id="Centesimas">00</div>
                 <input type="button" class="boton" id="inicio" value="Inicio &#9658;" onclick="inicios();">
                 <input type="button" class="boton" id="parar" value="Parar &#8718;" onclick="parars();" disabled>
                 <input type="button" class="boton" id="continuar" value="Continuar &#8634;" onclick="inicios();" disabled>

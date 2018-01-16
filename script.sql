@@ -200,18 +200,26 @@ INSERT INTO `ExerciseContainInTable`(`IDTable`, `IDExercise`, `ExercisePosition`
 
 
 #Insert TableSession.
-INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","12345678Z","2013-08-05 18:19:03");
-INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Cardio Table","88888888Y","2014-07-23 10:32:26");
-INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Cardio Table","12345678Z","2016-12-08 11:08:26");
-INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","88888888Y","2017-03-15 14:34:37");
-INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Cardio Table","12345678Z","2017-04-12 06:34:37");
-INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","88888888Y","2017-05-25 09:34:37");
-INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","12345678Z","2017-05-25 06:34:37");
-INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Cardio Table","88888888Y","2017-03-17 08:34:37");
-INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Cardio Table","12345678Z","2016-12-23 11:08:26");
-INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","88888888Y","2013-08-05 18:19:03");
-INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`) VALUES ("Muscule Table","12345678Z","2016-12-08 11:08:26");
-
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Cardio Table","88888888Y","2017-01-06 10:32:26","75.2","Inicio tabla nueva");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Cardio Table","88888888Y","2017-01-08 11:08:26","65.32","Hoy tengo agujetas");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Cardio Table","88888888Y","2017-01-17 08:34:37","45.45","Le voy pillando el ritmo");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Cardio Table","88888888Y","2017-01-23 11:08:26","80.12","Me duele el gemelo");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Cardio Table","88888888Y","2017-01-27 06:34:37","65.12","Hoy estire mejor y no me duele el gemelo");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Muscule Table","12345678Z","2017-02-05 09:34:37","70.78","Inicio otra tabla");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Muscule Table","12345678Z","2017-02-07 06:34:37","35.56","Con poco peso es facil");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Muscule Table","12345678Z","2017-02-16 18:19:03","80.21","Le he subido el peso y me ha costado mucho mas");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Muscule Table","12345678Z","2017-02-22 11:08:26","15.20","Hoy Solo hice la mitad que estaba cansado");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Muscule Table","12345678Z","2017-02-26 18:19:03","65.25","Hoy lo he dado todo con el maximo peso posible");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Cardio Table","12345678Z","2017-01-06 10:32:26","75.33","Inicio tabla nueva");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Cardio Table","12345678Z","2017-01-08 11:08:26","65.75","Hoy tengo agujetas");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Cardio Table","12345678Z","2017-01-17 08:34:37","45.20","Le voy pillando el ritmo");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Cardio Table","12345678Z","2017-01-23 11:08:26","80","Me duele el gemelo");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Cardio Table","12345678Z","2017-01-27 06:34:37","65.10","Hoy estire mejor y no me duele el gemelo");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Muscule Table","88888888Y","2017-02-05 09:34:37","70.412","Inicio otra tabla");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Muscule Table","88888888Y","2017-02-07 06:34:37","35.65","Con poco peso es facil");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Muscule Table","88888888Y","2017-02-16 18:19:03","80.10","Le he subido el peso y me ha costado mucho mas");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Muscule Table","88888888Y","2017-02-22 11:08:26","15.45","Hoy Solo hice la mitad que estaba cansado");
+INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES ("Muscule Table","88888888Y","2017-02-26 18:19:03","65.58","Hoy lo he dado todo con el maximo peso posible");
 
 #Insert UserRealizeCourses
 INSERT INTO `UserRealizeCourses`(`IDCourses`, `DNI`) VALUES ("1","12345678Z");

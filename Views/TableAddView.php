@@ -49,7 +49,7 @@ class TableAddView
         <div class="row mt">
             <div class="col-lg-12">
                 <div class="form-panel">
-                    <h4 class="mb"><i class="fa fa-angle-right"></i> Datos de la Tabla</h4>
+                    <h4 class="mb"><i class="fa fa-angle-right"></i> Crear la Tabla</h4>
                     <form method="post" class="form-horizontal style-form" action="../Controllers/TableActionController.php?action=ADD">
 
 
@@ -76,7 +76,7 @@ class TableAddView
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label">Visibilidad</label>
+                                <label class="col-sm-2 col-sm-2 control-label">Asignar tabla</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control round-form" name="Visibility">
                                 </div>
@@ -149,7 +149,7 @@ class TableAddView
                     </form>
                     <br>
                     <br>
-                    <img class="boton" style="width: 50px;height: 50px" src="../Templates/img2/add.png">
+                    <img class="boton" style="width: 50px;height: 50px" src="../Templates/img2/hecho.png">
                     <a class="submit" href="../Controllers/TableShowAllController.php"><img src="../Templates/img2/atras.png"></a>
                 </div>
             </div>

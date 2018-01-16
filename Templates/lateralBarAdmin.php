@@ -102,6 +102,9 @@
                 <ul class="sub">
                     <li><a  href="../Controllers/TableShowAllController.php">Ver todas las tablas</a></li>
                 </ul>
+                <ul class="sub">
+                    <li><a  href="../Controllers/TableSessionShowAllController.php">Ver todas las Sesiones</a></li>
+                </ul>
             </li>
 
             <li class="sub-menu">

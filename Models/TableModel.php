@@ -256,4 +256,55 @@ class TableDAO
 
 
     }
+
+    function getAllSession(){
+
+        $dni=$_SESSION['login'];
+        $statement = $this->DBLink->prepare("SELECT * FROM `TableSession` WHERE DNI='".$dni."' ORDER BY IDTable");
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+        }else{
+            $result = $statement->get_result();
+            $toRet = array();
+
+            while ($row = $result->fetch_assoc()){
+                $table = new Table($row['IDTable']);
+                $table->loadSession($row);
+                array_push($toRet,$table);
+
+            }
+            $this->lastResult = $toRet;
+            return "ok";
+        }
+
+
+    }
+
+
+
+    function getSession($table){
+
+
+        $dni=$_SESSION['login'];
+        $statement = $this->DBLink->prepare("SELECT * FROM `TableSession` WHERE DNI='".$dni."' AND IDTable='".$table."'");
+        if(!$statement->execute()) {
+            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
+
+        }else{
+            $result = $statement->get_result();
+            $toRet = array();
+
+            while ($row = $result->fetch_assoc()){
+                $table = new Table($row['IDTable']);
+                $table->loadSession($row);
+                array_push($toRet,$table);
+
+            }
+            $this->lastResult = $toRet;
+            return "ok";
+        }
+    }
+
+
 }

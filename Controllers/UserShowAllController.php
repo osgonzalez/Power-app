@@ -3,9 +3,9 @@ session_start();
 
 include '../Functions/Authentication.php';
 
-if (!IsAuthenticated() || $_SESSION['type'] != 'ADMIN'){
-
-    header('Location:../index.php');
+if (!IsAuthenticated() || ($_SESSION['type'] != 'ADMIN' && $_SESSION['type'] != 'COACH')){
+    echo 'holaaa'.$_SESSION['type'];
+   /* header('Location:../index.php');*/
 
 }else{
 

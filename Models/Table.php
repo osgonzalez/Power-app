@@ -17,6 +17,9 @@ class Table
     private $Exercises;
     private $Visibility;
 
+    private $Record;
+    private $SesionTime;
+    private $Comment;
 
     public function __construct($IDTable)
     {
@@ -48,6 +51,12 @@ class Table
         $this->Content = $Content;
         $this->Visibility = $Visibility;
 
+    }
+
+    public function loadSession($dataArray){
+        $this->Record = $dataArray['Record'];;
+        $this->SesionTime = $dataArray['SesionTime'];;
+        $this->Comment = $dataArray['Comment'];;
     }
 
 
@@ -110,6 +119,32 @@ class Table
     public function getContent()
     {
         return $this->Content;
+    }
+
+
+
+        /**
+         * @return mixed
+         */
+    public function getRecord()
+    {
+        return $this->Record;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSesionTime()
+    {
+        return $this->SesionTime;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getComment()
+    {
+        return $this->Comment;
     }
 
 

@@ -49,8 +49,16 @@ class UsersShowAllView
             <td><?php  echo $user->getTelephone(); ?></td>
             <td><?php  echo $user->getCity(); ?></td>
             <td><?php  echo $user->getBirthdate(); ?></td>
-      <td><?php  echo '<a href="../Controllers/formLoader.php?DNI='.$user->getDNI().'&form=userEdit"><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>'; ?></td>
-      <td><?php  echo '<a href="../Controllers/UserActionController.php?DNI='.$user->getDNI().'&action=DELETE"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>'; ?></td>
+
+      <?php
+        if($_SESSION['type'] == 'ADMIN'){
+            ?>
+            <td><?php  echo '<a href="../Controllers/formLoader.php?DNI='.$user->getDNI().'&form=userEdit"><img src="../Templates/img2/edit.png" style="width:30px;height:30px;" title="Editar"></a>'; ?></td>
+            <td><?php  echo '<a href="../Controllers/UserActionController.php?DNI='.$user->getDNI().'&action=DELETE"><img src="../Templates/img2/delete.png" style="width:30px;height:30px;" title="Borrar"></a>'; ?></td>
+
+                <?php
+        }
+        ?>
 
             </tr><?php
         }
