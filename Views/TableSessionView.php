@@ -22,22 +22,19 @@ class TableSessionView
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <script>
-            var cadena= "";
-            $(document).ready(function(){
-                $("#guardarTiempo").click(function(){
-                    cadena+=$("#horas").text();
-                    cadena+=$("#minutos").text();
-                    cadena+=$("#segundos").text();
-                    $("#resultado").val(cadena);
-                });
 
-            });
+            function appendTime() {
 
+                horas = $("#Horas").text();
+                minutos = $("#Minutos").text();
+                segundos = $("#Segundos").text();
+                $("#Record").val(horas + minutos + segundos);
+            }
 
         </script>
 
 
-        <form method="post" action="../Controllers/TableSessionController.php?DNI=<?php echo $_SESSION['login'].'&IdTable='.$this->table->getIDTable()?>">
+        <form method="post" action="../Controllers/TableSessionController.php?Confirm=OK<?php echo '&IDTable='.$this->table->getIDTable()?>">
 
             <div class="row mt">
                 <div class="col-lg-12">
@@ -84,7 +81,7 @@ class TableSessionView
             <div class="content-panel" style="padding-left: 20px">
                 <h4>Añadir comentarios a la sesión.</h4>
                 <br>
-                <textarea style="width: 100%; color: black;font-size: 20px;" name="Coments" id="Coments" cols="30" rows="3" maxlength="140" placeholder="Hoy me veo bien ;)"></textarea>
+                <textarea style="width: 100%; color: black;font-size: 20px;" name="Comment" id="Coments" cols="30" rows="3" maxlength="140" placeholder="Hoy me veo bien ;)"></textarea>
             </div>
 
 
@@ -100,12 +97,12 @@ class TableSessionView
                 <input type="button" class="boton" id="reinicio" value="Reiniciar &#8635;" onclick="reinicios();" disabled>
             </div>
 
-            <input type="text" id="Record" name="Record" value="0"> <button id="guardarTiempo">guardar</button>
+            <input type="text" id="Record" name="Record" value="0" hidden>
 
 
             <div class="row mt">
                 <div style="display: flex; justify-content: center;" >
-                    <button class="submit" type="submit" ><img src="../Templates/img2/add.png"></button>
+                    <button class="submit" type="submit" onclick="appendTime()"><img src="../Templates/img2/add.png"></button>
                     <a href="../Controllers/TableShowAllController.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;margin-left: 10px;" title="Atrás"></a>
                 </div>
             </div>

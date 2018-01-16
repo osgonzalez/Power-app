@@ -233,29 +233,18 @@ class TableDAO
     }
 
 
-    function addSession(Table $table,$record,$comment){
+    function addSession($table,$record,$comment){
 
-        $statement = $this->DBLink->prepare("SELECT * FROM TableSession WHERE IDTable = ?, DNI = ? , SesionTime = ?");
-        $SesionTime = (new DateTime())->getTimestamp();
-        $IDTable = $table->getIDTable();
-        $statement->bind_param("sss",$IDTable,$_SESSION['login'],$SesionTime);
+        $SesionTime = date('Y-m-d H:i:s',(new DateTime())->getTimestamp());
+        /*$IDTable = $table->getIDTable();*/
+        $IDTable = $table;
+        $dni = $_SESSION['login'];
 
-        if(!$statement->execute()) {
-            return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
-        }
-        $resultado = $statement->get_result();
+            echo $IDTable." ".$dni." ".$SesionTime;
+            $statement = $this->DBLink->prepare("INSERT INTO `TableSession`(`IDTable`, `DNI`, `SesionTime`,`Record`,`Comment`) VALUES (?,?,?,?,?)");
 
-        if($resultado->num_rows != 0){
-            return "La sesión ya existe en la base de datos.";
-        }else{
 
-            $statement = $this->DBLink->prepare("INSERT INTO TableSession(IDTable, DNI, SesionTime, Record, 
-                                                                    Comment) 
-                                                                    VALUES (?,?,?,?,?)");
-            $IDTable = $table->getIDTable();
-            $dni = $_SESSION['login'];
-
-            $statement->bind_param("sssss",$IDTable,$SesionTime, $dni, $record, $comment);
+            $statement->bind_param("sssss",$IDTable,$dni,$SesionTime, $record, $comment);
 
             if(!$statement->execute()) {
                 return "Falló la ejecución: (" . $statement->errno . ") " . $statement->error;
@@ -264,7 +253,6 @@ class TableDAO
                 return "Insercion correcta";
             }
 
-        }
 
 
     }

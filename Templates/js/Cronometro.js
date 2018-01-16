@@ -35,7 +35,7 @@ function cronometros () {
         if (centesimas < 10) { centesimas = "0"+centesimas }
         Centesimas.innerHTML = ":"+centesimas;
     }
-    if (centesimas == 99) {
+    if (centesimas >= 99) {
         centesimas = -1;
     }
     if (centesimas == 0) {
@@ -43,7 +43,7 @@ function cronometros () {
         if (segundos < 10) { segundos = "0"+segundos }
         Segundos.innerHTML = ":"+segundos;
     }
-    if (segundos == 59) {
+    if (segundos >= 59) {
         segundos = -1;
     }
     if ( (centesimas == 0)&&(segundos == 0) ) {
@@ -51,7 +51,7 @@ function cronometros () {
         if (minutos < 10) { minutos = "0"+minutos }
         Minutos.innerHTML = ":"+minutos;
     }
-    if (minutos == 59) {
+    if (minutos >= 59) {
         minutos = -1;
     }
     if ( (centesimas == 0)&&(segundos == 0)&&(minutos == 0) ) {
