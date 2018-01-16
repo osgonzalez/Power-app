@@ -58,20 +58,22 @@ class GraphicTableUserView
             }
         </script>
 
-        <div id="Grafico" style="width: 800px; height: 600px">
+        <div id="Grafico" style="width: 100%; height: 400px">
         </div>
-
+        <br>
 
         <div class="row mt">
             <div style="display: flex; justify-content: center;" >
-                <a href="../Controllers/formLoader.php?form=addExerciseInTable&IDTable=<?php echo $this->table->getIDTable();?>"><img src="../Templates/img2/addCurso.png" style="width:45px;heigh:45px;" title="Añadir Ejercicio a Tabla"></a>
                 <a href="../Controllers/TableShowAllController.php"><img src="../Templates/img2/atras.png" style="width:45px;heigh:45px;margin-left: 10px;" title="Atrás"></a>
             </div>
         </div>
-
+        <br><br><br><br><br><br><br>
         <?php
 
         include '../Templates/footer.html';
 
     }
+
 }
+
+?>

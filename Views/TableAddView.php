@@ -9,9 +9,10 @@
 class TableAddView
 {
     var $exercises;
-
-    function __construct(array $exercises){
+    var $coachs;
+    function __construct(array $exercises,array $coachs){
         $this->exercises = $exercises;
+        $this->coachs = $coachs;
         $this->render();
     }
     function render(){
@@ -78,7 +79,15 @@ class TableAddView
                             <div class="form-group">
                                 <label class="col-sm-2 col-sm-2 control-label">Asignar tabla</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control round-form" name="Visibility">
+                                    <select name="DNICoach" required>
+                                        <option disabled selected value>Seleciona DNI coach</option>
+                                        <?php
+                                        foreach ($this->coachs as $coach){
+                                            echo "<option value='".$coach->getDNI()."'>".$coach->getDNI()." (".$coach->getFullName().")</option>";
+                                        }
+                                        ?>
+
+                                    </select>
                                 </div>
                             </div>
 
